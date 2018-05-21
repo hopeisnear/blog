@@ -1,0 +1,29 @@
+.home-page {
+  display: flex;
+  width: 100%;
+
+  .articles {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    > article {
+      flex: 40%;
+      border: 1px solid #ccc;
+      margin: 1rem 1rem 1rem 0;
+      padding: 1rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .about {
+    flex: 1 0 auto;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+  }
+
+  @media (max-width: 1280px) {
+    .articles > article {
+      flex: 100%;
+    }
+  }
+}
