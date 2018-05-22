@@ -5,21 +5,13 @@ body {
 }
 
 body {
-  color: #212121;
   font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
-}
-
-#app {
-  background-color: #fafafa;
-  min-height: 100%;
-  min-width: 100%;
-}
-
-p,
-label {
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  line-height: 1.5em;
+  font-size: 16px;
+  font-weight: 300;
+  color: #aaa;
+  line-height: 1.428571429;
+  background-color: #fff;
 }

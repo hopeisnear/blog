@@ -1,17 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { PureComponent } from 'react';
 
-import Banner from './images/banner.jpg';
 import './style.scss';
 
-class Header extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class Header extends PureComponent {
   render() {
     return (
-      <header>
+      <header className={this.props.className}>
         <div className="container">
           <div className="row">
             <a href="#">&lt; AMAZING Developer &gt;</a>
           </div>
+          <nav>
+            <ul>
+              <li>
+              about
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
     );
