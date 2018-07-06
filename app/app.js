@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import { Router, Route } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
 
@@ -28,9 +28,9 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       {/* <LanguageProvider messages={messages}> */}
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
+      <Router history={history}>
+        <Route path="/" render={(props) => <App {...props} />} />
+      </Router>
       {/* </LanguageProvider> */}
     </Provider>,
     MOUNT_NODE

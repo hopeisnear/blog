@@ -4,7 +4,7 @@
 
 import { createSelector } from 'reselect';
 
-const selectHome = (state) => state.get('home');
+const selectHome = (state) => { debugger; return state.get('home'); }
 
 const makeSelectUsername = () => createSelector(
   selectHome,
