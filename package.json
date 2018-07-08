@@ -1,16 +1,16 @@
 {
-  "name": "react-redux-boilerplate",
-  "version": "1.0.0",
-  "description": "A minimal react-redux boilerplate with all the best practices",
+  "name": "good-developer-blog",
+  "version": "0.0.1",
+  "description": "Blog about programming best practices",
   "repository": {
     "type": "git",
-    "url": "git://github.com/flexdinesh/react-redux-boilerplate.git"
+    "url": "git@github.com:hopeisnear/blog.git"
   },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Dinesh Pandiyan",
+  "author": "Rafal Szczepankiewicz",
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run build:clean",
@@ -32,6 +32,7 @@
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "chalk": "^2.3.2",
+    "classnames": "^2.2.6",
     "compression": "1.7.2",
     "cross-env": "5.1.4",
     "express": "4.16.3",
@@ -95,17 +96,17 @@
     "jest-cli": "22.4.3",
     "lint-staged": "7.0.4",
     "node-plop": "0.13.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.9.1",
     "null-loader": "0.1.1",
     "plop": "2.0.0",
     "react-test-renderer": "16.3.2",
     "rimraf": "2.6.2",
-    "sass-loader": "^7.0.1",
+    "sass-loader": "^7.0.3",
     "shelljs": "^0.8.1",
     "style-loader": "0.20.3",
     "url-loader": "1.0.1",
     "webpack": "4.5.0",
-    "webpack-cli": "^2.0.10",
+    "webpack-cli": "^2.1.5",
     "webpack-dev-middleware": "3.1.2",
     "webpack-hot-middleware": "2.21.2"
   }

@@ -1,0 +1,16 @@
+.article {
+  padding-bottom: 30px;
+  display: flex;
+  .article-image {
+    flex: 0 0 33.3333333333%;
+    padding-right: 15px;
+  }
+  .article-teaser {
+    .article-title {
+      margin-top: 0;
+    }
+    .article-short-description {
+      text-indent: 10px;
+    }
+  }
+}
