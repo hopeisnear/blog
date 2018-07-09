@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Article = (props) => (
+
+const ArticleContent = (props) => (
   <article className="article">
     <div className="article-image">
       <a href="">
@@ -20,9 +22,11 @@ const Article = (props) => (
     <div className="article-teaser">
       <header>
         <h2 className="article-title">
-          <a href="">
-             INFINITE STYLING – CHRISTMAS WINDOWS FOR GHD
-          </a>
+          <Link to="/article">
+            <a href="">
+               INFINITE STYLING – CHRISTMAS WINDOWS FOR GHD
+            </a>
+          </Link>
         </h2>
         <time className="updated" dateTime="2017-11-10T16:52:30+00:00">10th November 2017</time>
       </header>
@@ -35,9 +39,9 @@ const Article = (props) => (
   </article>
 );
 
-Article.propTypes = {
+ArticleContent.propTypes = {
 
 };
 
-export default Article;
+export default ArticleContent;
 

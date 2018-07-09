@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
+import Article from 'containers/Article/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import './style.scss';
@@ -17,6 +18,7 @@ const App = () => (
       <main role="main">
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/article" component={Article} />
         </Switch>
       </main>
     </div>

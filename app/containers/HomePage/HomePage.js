@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import ArticleContent from 'components/ArticleContent';
 import Panel from '../../components/Panel/Panel';
-import Article from '../../components/Article/Article';
 import './style.scss';
 
 export default class HomePage extends React.PureComponent {
@@ -14,8 +14,8 @@ export default class HomePage extends React.PureComponent {
           <meta name="description" content="< Home >" />
         </Helmet>
         <div>
-          <Article />
-          <Article />
+          <ArticleContent />
+          <ArticleContent />
         </div>
       </div>
     );
