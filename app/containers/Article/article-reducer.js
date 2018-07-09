@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
+import { createReducer } from 'utils/create-reducer';
 import { FETCH_ARTICLE_REQUESTED, FETCH_ARTICLE_RESPONDED } from './article-actions';
-import { createReducer } from '../../utils/create-reducer';
 
 const initialState = fromJS({
   article: {}

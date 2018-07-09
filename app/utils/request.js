@@ -39,8 +39,8 @@ function checkStatus(response) {
  *
  * @return {object}           The response data
  */
-export default function fetchJSON(url) {
-  return fetch(url, {
+export function fetchJSON(url) {
+  return fetch(`http://localhost:5000${url}`, {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
-const ArticleContent = (props) => (
+const ArticleContent = () => (
   <article className="article">
     <div className="article-image">
       <a href="">
@@ -22,7 +22,7 @@ const ArticleContent = (props) => (
     <div className="article-teaser">
       <header>
         <h2 className="article-title">
-          <Link to="/article">
+          <Link to="/articles">
             <a href="">
                INFINITE STYLING – CHRISTMAS WINDOWS FOR GHD
             </a>

@@ -12,7 +12,6 @@ const routeInitialState = fromJS({
 function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     case LOCATION_CHANGED:
-      debugger;
       return state.merge({
         location: action.payload,
       });
