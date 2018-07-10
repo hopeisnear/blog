@@ -41,7 +41,7 @@ module.exports = (options) => ({
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
+        test: /\.(eot|svg|ico|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
       },
       {

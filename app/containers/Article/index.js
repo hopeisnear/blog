@@ -3,17 +3,17 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 
-import { fetchArticle } from './article-actions';
-import { makeSelectUsername } from './article-selector';
+import { fetchArticleAction } from './article-actions';
+import { selectArticle } from './article-selector';
 import articleReducer from './article-reducer';
 import Article from './Article';
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchArticle: () => dispatch(fetchArticle({ id: 'test' }))
+  fetchArticle: () => dispatch(fetchArticleAction({ id: 'test' }))
 });
 
 const mapStateToProps = createStructuredSelector({
-  username: makeSelectUsername()
+  article: selectArticle()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);

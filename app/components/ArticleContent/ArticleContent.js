@@ -1,7 +1,7 @@
 import React from 'react';
+import moment from 'moment';
+import { loadImage } from 'utils/imageLoader';
 import { Link } from 'react-router-dom';
-
-import '../../images/first_article.jpg';
 
 const ArticleContent = ({ article }) => (
   <article className="article">
@@ -11,7 +11,7 @@ const ArticleContent = ({ article }) => (
           <img
             width="360"
             height="252"
-            src={`../../images/${article.get('name')}.jpg`}
+            src={loadImage(`${article.get('name')}.jpg`)}
             className="attachment-news-thumb size-news-thumb wp-post-image"
             alt=""
             sizes="(max-width: 360px) 100vw, 360px"
@@ -22,13 +22,11 @@ const ArticleContent = ({ article }) => (
     <div className="article-teaser">
       <header>
         <h2 className="article-title">
-          <Link to={`/articles/${article.get('name')}`}>
-            <a href="">
-              {article.get('title')}
-            </a>
+          <Link to={`/article/${article.get('name')}`}>
+            {article.get('title')}
           </Link>
         </h2>
-        <time className="updated" dateTime="2017-11-10T16:52:30+00:00">{article.get('created')}</time>
+        <time className="updated" dateTime={article.get('created')}>{moment(article.get('created')).format('ll')}</time>
       </header>
       <div>
         <p className="article-short-description">

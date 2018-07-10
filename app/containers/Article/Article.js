@@ -1,10 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import ArticleContent from 'components/ArticleContent';
+import ArticleDetails from 'components/ArticleDetails';
 
 import './article-style.scss';
 
 export default class Article extends React.Component {
+  componentDidMount() {
+    this.props.fetchArticle();
+  }
 
   render() {
     return (
@@ -18,10 +21,8 @@ export default class Article extends React.Component {
         </Helmet>
 
         <div>
-          <ArticleContent />
+          {this.props.article && <ArticleDetails article={this.props.article} />}
         </div>
-
-
       </div>
     );
   }

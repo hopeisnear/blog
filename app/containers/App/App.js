@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import Articles from 'containers/Articles/Loadable';
+import Article from 'containers/Article/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import './style.scss';
@@ -19,6 +20,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/articles" component={Articles} />
+          <Route path="/article" component={Article} />
         </Switch>
       </main>
     </div>
