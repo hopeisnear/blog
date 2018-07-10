@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
+import '../../images/first_article.jpg';
 
-const ArticleContent = () => (
+const ArticleContent = ({ article }) => (
   <article className="article">
     <div className="article-image">
       <a href="">
@@ -11,7 +11,7 @@ const ArticleContent = () => (
           <img
             width="360"
             height="252"
-            src="https://www.w3schools.com/w3css/img_lights.jpg"
+            src={`../../images/${article.get('name')}.jpg`}
             className="attachment-news-thumb size-news-thumb wp-post-image"
             alt=""
             sizes="(max-width: 360px) 100vw, 360px"
@@ -22,17 +22,17 @@ const ArticleContent = () => (
     <div className="article-teaser">
       <header>
         <h2 className="article-title">
-          <Link to="/articles">
+          <Link to={`/articles/${article.get('name')}`}>
             <a href="">
-               INFINITE STYLING – CHRISTMAS WINDOWS FOR GHD
+              {article.get('title')}
             </a>
           </Link>
         </h2>
-        <time className="updated" dateTime="2017-11-10T16:52:30+00:00">10th November 2017</time>
+        <time className="updated" dateTime="2017-11-10T16:52:30+00:00">{article.get('created')}</time>
       </header>
       <div>
         <p className="article-short-description">
-           Millington Associates Produce – Infinite Styling Christmas windows for GHD A contrast between light and dark, visualising infinite possibilities and blurred …
+          {article.get('preview')} …
         </p>
       </div>
     </div>

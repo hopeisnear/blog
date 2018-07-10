@@ -13,11 +13,13 @@ module.exports = require('./webpack.base.babel')({
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'app/app.js') // Start with js/app.js
+    './app/app' // Start with js/app.js
   ],
 
   // Don't use hashes in dev mode for better performance
   output: {
+    path: path.join(__dirname, 'public'),
+    publicPath: '/',
     filename: '[name].js',
     chunkFilename: '[name].chunk.js'
   },
