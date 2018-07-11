@@ -12,7 +12,6 @@
 import { fromJS } from 'immutable';
 import { createReducer } from '../../utils/create-reducer';
 
-import { CHANGE_USERNAME } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
@@ -20,10 +19,6 @@ const initialState = fromJS({
 });
 
 export const homeReducer = createReducer(initialState, {
-  [CHANGE_USERNAME](state, action) {
-    debugger;
-    return state.set('username', action.name.replace(/@/gi, ''));
-  }
 });
 
 export default homeReducer;

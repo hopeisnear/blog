@@ -15,7 +15,6 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,6 +27,6 @@ export function changeUsername(name) {
   return (dispatch, getState) => {
     debugger;
     const aaa= getState();
-    dispatch({ type: CHANGE_USERNAME, name })
+    // dispatch({ type: CHANGE_USERNAME, name })
   };
 }

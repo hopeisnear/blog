@@ -1,10 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import Articles from 'containers/Articles/Loadable';
-import Article from 'containers/Article/Loadable';
+import Blog from 'containers/Blog/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import './style.scss';
@@ -18,9 +16,8 @@ const App = () => (
     <div className="app-body" role="document">
       <main role="main">
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/articles" component={Articles} />
-          <Route path="/article" component={Article} />
+          <Route exact path="/" render={() => <Redirect to="/blog" />} />
+          <Route path="/blog" component={Blog} />
         </Switch>
       </main>
     </div>

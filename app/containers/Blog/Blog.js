@@ -1,18 +1,24 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import Articles from 'containers/Articles';
+import Articles from 'containers/Articles/Loadable';
+import Article from 'containers/Article/Loadable';
 import './style.scss';
 
-export default class HomePage extends React.PureComponent {
+export default class Blog extends React.PureComponent {
   render() {
+    console.log(this.props.articleName);
     return (
-      <div className="home-page">
+      <div className="blog">
         <Helmet>
           <title>{'< awesome developer >'}</title>
-          <meta name="description" content="< Home >" />
+          <meta name="description" content="< Blog home >" />
         </Helmet>
         <div>
-          <Articles />
+          <Switch>
+            <Route exact path="/blog" component={Articles} />
+            <Route exact path="/blog/:articleName" component={Article} />
+          </Switch>
         </div>
       </div>
     );

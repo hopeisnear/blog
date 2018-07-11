@@ -22,7 +22,7 @@ const ArticleContent = ({ article }) => (
     <div className="article-teaser">
       <header>
         <h2 className="article-title">
-          <Link to={`/article/${article.get('name')}`}>
+          <Link to={`/blog/${article.get('name')}`}>
             {article.get('title')}
           </Link>
         </h2>

@@ -2,16 +2,11 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
-import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError
-} from 'containers/App/selectors';
 import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import HomePage from './HomePage';
+import { changeUsername } from './blog-actions';
+import { selectArticleName } from './blog-selector';
+import reducer from './blog-reducer';
+import Blog from './Blog';
 
 const mapDispatchToProps = (dispatch) => ({
   onChangeUsername: (evt) => dispatch(changeUsername('qwerty')),
@@ -22,15 +17,12 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError()
+  articleName: selectArticleName()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-const withReducer = injectReducer({ key: 'home', reducer });
+const withReducer = injectReducer({ key: 'blog', reducer });
 
-export default compose(withReducer, withConnect)(HomePage);
+export default compose(withReducer, withConnect)(Blog);
 export { mapDispatchToProps };
