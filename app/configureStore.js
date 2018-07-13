@@ -1,17 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { fromJS } from 'immutable';
 import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
 
-export default function configureStore(initialState = {}) {
+export default function configureStore(initialState) {
   const enhancers = [
     applyMiddleware(thunk),
   ];
 
   const store = createStore(
     createReducer(),
-    fromJS(initialState),
+    initialState,
     compose(...enhancers)
   );
 

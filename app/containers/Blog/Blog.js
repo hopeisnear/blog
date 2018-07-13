@@ -7,7 +7,7 @@ import './style.scss';
 
 export default class Blog extends React.PureComponent {
   render() {
-    console.log(this.props.articleName);
+    console.log(this.props.articleName)
     return (
       <div className="blog">
         <Helmet>
