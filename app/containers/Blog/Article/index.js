@@ -1,24 +1,21 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import injectReducer from 'utils/injectReducer';
 
 import { fetchArticleAction } from './article-actions';
-import { selectArticle } from './article-selector';
-import articleReducer from './article-reducer';
+import { selectArticle, selectArticleName } from './article-selector';
 import Article from './Article';
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchArticle: () => dispatch(fetchArticleAction({ id: 'test' }))
+  fetchArticle: (articleName) => dispatch(fetchArticleAction(articleName))
 });
 
 const mapStateToProps = createStructuredSelector({
-  article: selectArticle()
+  article: selectArticle(),
+  articleName: selectArticleName()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-const withReducer = injectReducer({ key: 'article', reducer: articleReducer });
-
-export default compose(withReducer, withConnect)(Article);
+export default compose(withConnect)(Article);
 export { mapDispatchToProps };

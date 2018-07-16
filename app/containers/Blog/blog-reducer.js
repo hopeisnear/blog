@@ -1,24 +1,21 @@
-/*
- * HomeReducer
- *
- * The reducer takes care of our data. Using actions, we can change our
- * application state.
- * To add a new action, add it to the switch statement in the reducer function
- *
- * Example:
- * case YOUR_ACTION_CONSTANT:
- *   return state.set('yourStateVariable', true);
- */
 import { fromJS } from 'immutable';
 import { createReducer } from '../../utils/create-reducer';
+import { FETCH_ARTICLES_RESPONDED } from './Articles/articles-actions';
+import { FETCH_ARTICLE_RESPONDED } from './Article/article-actions';
 
 
-// The initial state of the App
 const initialState = fromJS({
-  username: ''
+  articles: []
 });
 
-export const homeReducer = createReducer(initialState, {
+const blogReducer = createReducer(initialState, {
+  [FETCH_ARTICLES_RESPONDED](state, action) {
+    return state.set('articles', fromJS(action.response));
+  },
+  [FETCH_ARTICLE_RESPONDED](state, action) {
+    const articles = state.get('articles').mergeWith((oldValue, newValue) => ((newValue === null) ? oldValue : newValue), fromJS([action.response]));
+    return state.set('articles', articles);
+  }
 });
 
-export default homeReducer;
+export default blogReducer;
