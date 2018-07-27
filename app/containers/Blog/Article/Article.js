@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { func, string } from 'prop-types';
+import { func, string, shape } from 'prop-types';
 import { Helmet } from 'react-helmet';
 import ArticleContent from 'components/ArticleContent';
 
@@ -31,7 +31,7 @@ export default class Article extends PureComponent {
 }
 
 Article.propTypes = {
-  article: string,
+  article: shape({}),
   articleName: string.isRequired,
   fetchArticle: func.isRequired
 };

@@ -1,13 +1,12 @@
 import React, { PureComponent } from 'react';
-import { func } from 'prop-types';
-import { list } from 'react-immutable-proptypes';
+import { func, array } from 'prop-types';
+import { isEmpty } from 'lodash';
 import ArticleHeading from 'components/ArticleHeading';
-
 import './articles-style.scss';
 
 export default class Articles extends PureComponent {
   componentDidMount() {
-    if (this.props.articles.isEmpty()) {
+    if (isEmpty(this.props.articles)) {
       this.props.fetchArticles();
     }
   }
@@ -15,15 +14,13 @@ export default class Articles extends PureComponent {
   render() {
     return (
       <div className="article-details">
-        <div>
-          {this.props.articles.map((article) => (<div key={article.get('name')}><ArticleHeading article={article} /></div>)).toArray()}
-        </div>
+        {this.props.articles.map((article) => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
       </div>
     );
   }
 }
 
 Articles.propTypes = {
-  articles: list.isRequired,
+  articles: array.isRequired,
   fetchArticles: func.isRequired
 };

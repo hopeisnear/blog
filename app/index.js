@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
+import { fromJS } from 'immutable';
 import 'sanitize.css/sanitize.css';
 import 'styles/theme.scss';
 import App from './App';
@@ -10,8 +11,8 @@ import App from './App';
 import configureStore from './configureStore';
 import { LOCATION_CHANGED } from './reducers';
 
-const initialState = {};
 const history = createHistory();
+const initialState = fromJS({ route: { location: history.location } });
 const store = configureStore(initialState, history);
 
 const APP_ROOT = document.getElementById('app');
