@@ -16,16 +16,31 @@ class Header extends PureComponent {
   render() {
     return (
       <header className={classNames(this.props.className, 'app-header')}>
-        <h2 className="title">
-          <a href="#">&lt; AMAZING Developer &gt;</a>
-        </h2>
-        <nav className="nav-bar">
-          <ul className="nav-bar-elements">
-            <li>
-            about
-            </li>
-          </ul>
-        </nav>
+        <div>
+          <div>
+            <div className="header-top">
+              <div className="header-logo">
+                <a href="#">&lt; AMAZING Developer &gt;</a>
+              </div>
+              <nav className="header-top-nav">
+                <ul className="nav-bar-elements">
+                  <li>
+                    Login
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <nav className="page-menu-nav">
+            <div className="page-menu">
+              <ul className="nav-bar-elements">
+                <li>
+                  about
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </header>
     );
   }

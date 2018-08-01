@@ -1,0 +1,19 @@
+.articles {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  .articles-content {
+    margin: 0 10px;
+    flex-grow: 1;
+  }
+  .articles-sidebar {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    margin: 0 10px;
+    display: flex;
+  }
+}

@@ -6,18 +6,16 @@ import Article from 'containers/Blog/Article/Loadable';
 import './style.scss';
 
 const Blog = () => (
-  <div className="blog">
+  <React.Fragment>
     <Helmet>
       <title>{'< awesome developer >'}</title>
       <meta name="description" content="< Blog home >" />
     </Helmet>
-    <div>
-      <Switch>
-        <Route exact path="/blog" component={Articles} />
-        <Route exact path="/blog/:articleName" component={Article} />
-      </Switch>
-    </div>
-  </div>
+    <Switch>
+      <Route exact path="/blog" component={Articles} />
+      <Route exact path="/blog/:articleName" component={Article} />
+    </Switch>
+  </React.Fragment>
 );
 
 export default Blog;

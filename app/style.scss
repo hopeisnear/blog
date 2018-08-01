@@ -1,11 +1,7 @@
-.header-container, .footer-container, .app-body {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 1170px;
+main {
+  min-height: calc(100vh - 250px);
 }
 
-.app-body {
-  min-height: calc(100vh - 250px);
+a {
+  text-decoration: none;
 }

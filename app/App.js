@@ -13,14 +13,12 @@ const App = () => (
       <meta name="description" content="A React.js Boilerplate application" />
     </Helmet>
     <Header className="header-container" />
-    <div className="app-body" role="document">
-      <main role="main">
-        <Switch>
-          <Route exact path="/" render={() => <Redirect to="/blog" />} />
-          <Route path="/blog" component={Blog} />
-        </Switch>
-      </main>
-    </div>
+    <main role="main">
+      <Switch>
+        <Route exact path="/" render={() => <Redirect to="/blog" />} />
+        <Route path="/blog" component={Blog} />
+      </Switch>
+    </main>
     <Footer className="footer-container" />
   </div>
 );

@@ -1,5 +1,12 @@
 .app-footer {
-  position: relative;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  .footer-note {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: auto;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #cccccc;
+  }
 }

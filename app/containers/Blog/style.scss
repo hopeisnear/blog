@@ -1,16 +1,21 @@
-.article {
-  padding-bottom: 30px;
-  display: flex;
-  .article-image {
-    flex: 0 0 33.3333333333%;
-    padding-right: 15px;
+.blog-title-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+  .blog-page-title {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
   }
-  .article-teaser {
-    .article-title {
-      margin-top: 0;
-    }
-    .article-short-description {
-      text-indent: 10px;
-    }
-  }
+}
+
+.blog-title-header {
+  border-top: 1px solid black;
+}
+
+.blog {
+  border-top: 1px solid black;
+  background: #fcfcfc;
 }
