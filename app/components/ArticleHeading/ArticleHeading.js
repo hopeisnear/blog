@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 import sanity from 'utils/sanityProvider';
 
-import './articleHeading.scss';
+import './ArticleHeading.scss';
 
 const imageBuilder = imageUrlBuilder(sanity);
 

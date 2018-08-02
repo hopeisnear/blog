@@ -1,4 +1,4 @@
-.articles {
+.blog-articles {
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 25px;
@@ -6,11 +6,11 @@
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
-  .articles-content {
+  .blog-articles-list {
     margin: 0 10px;
     flex-grow: 1;
   }
-  .articles-sidebar {
+  .blog-articles-sidebar {
     flex-basis: 250px;
     flex-shrink: 0;
     margin: 0 10px;

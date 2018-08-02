@@ -3,7 +3,7 @@ import { func, string, shape } from 'prop-types';
 import { Helmet } from 'react-helmet';
 import ArticleContent from 'components/ArticleContent';
 
-import './article-style.scss';
+import './Article.scss';
 
 export default class Article extends PureComponent {
   componentDidMount() {
@@ -14,7 +14,7 @@ export default class Article extends PureComponent {
 
   render() {
     return (
-      <div className="article-details">
+      <div className="blog-article">
         <Helmet>
           <title>Article details</title>
           <meta
@@ -22,7 +22,7 @@ export default class Article extends PureComponent {
             content={`Article ${this.props.articleName} content`}
           />
         </Helmet>
-        <div>
+        <div className="blog-article-content">
           {this.props.article && <ArticleContent article={this.props.article} />}
         </div>
       </div>

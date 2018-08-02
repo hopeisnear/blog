@@ -1,3 +1,16 @@
+.article-wrapper {
+  flex-basis: 100%;
+  display: flex;
+  margin-bottom: 35px;
+  overflow: hidden;
+  padding: 0 20px;
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
 .article-image {
   img {
     bottom: 0;
