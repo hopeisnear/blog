@@ -7,7 +7,7 @@ export default function Header() {
     <header className="app-header">
       <div className="header-top">
         <div className="header-logo">
-          <a href="#">&lt; AMAZING Developer &gt;</a>
+          <a href="#">&lt; GOOD Developer &gt;</a>
         </div>
       </div>
     </header>

@@ -9,8 +9,8 @@ import './style.scss';
 
 const App = () => (
   <div className="app-container">
-    <Helmet key="one" titleTemplate="%s - React.js Boilerplate" defaultTitle="React.js Boilerplate" >
-      <meta name="description" content="A React.js Boilerplate application" />
+    <Helmet titleTemplate="Good developer" defaultTitle="Good developer" >
+      <meta name="description" content="A Good developer blog" />
     </Helmet>
     <Header />
     <main role="main">

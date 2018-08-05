@@ -18,12 +18,12 @@ const ArticleHeading = ({ article }) => (
   <div className="article-wrapper">
     <article className="article">
       <div className="article-image">
-        <a className="article-image-link" href="">
+        <Link className="article-image-link" to={`/blog/${article.slug.current}`}>
           <img
             src={imageUrlFor(article.image).ignoreImageParams().width(360).height(252)}
             alt={'article heading'}
           />
-        </a>
+        </Link>
       </div>
       <div className="article-title-wrapper">
         <div className="article-title">
@@ -32,7 +32,7 @@ const ArticleHeading = ({ article }) => (
           </Link>
         </div>
         <div className="article-timestamp">
-          <time className="updated" dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time>
+          <time className="updated" dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time> by Rafal Szczepankiewicz
         </div>
       </div>
       <article className="article-teaser">
