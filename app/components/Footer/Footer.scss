@@ -1,12 +1,9 @@
+@import "../../styles/variables.scss";
+
 .app-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid $main-border-color;
   .footer-note {
     padding-top: 20px;
     padding-bottom: 20px;
-    height: auto;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding-left: 25px;
-    padding-right: 25px;
   }
 }

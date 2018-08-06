@@ -1,11 +1,16 @@
+@import 'app/styles/variables.scss';
+
 .get-in-touch {
   margin-bottom: 35px;
   .header {
-    color: #a9a9a9;
+    font-family: $secondary-font;
+    letter-spacing: $secondary-font-letter-spacing;
+    font-size: $secondary-font-size;
+    font-weight: $secondary-font-weight;
+    line-height: $secondary-font-line-height;
+    color: $secondary-color;
     text-transform: uppercase;
-    font-size: 12px;
     margin-bottom: 15px;
-    font-weight: 400;
   }
   .content {
     .icons {

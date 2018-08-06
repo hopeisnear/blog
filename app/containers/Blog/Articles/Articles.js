@@ -18,7 +18,7 @@ export default class Articles extends PureComponent {
   render() {
     return (
       <section className="blog-articles-section">
-        <div className="blog-articles">
+        <div className="main-layout blog-articles">
           <div className="blog-articles-list">
             {this.props.articles.map((article) => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
           </div>
@@ -26,7 +26,7 @@ export default class Articles extends PureComponent {
             <div>
               <AboutAuthor />
               <GetInTouch />
-              <TrendingArticles />
+              <TrendingArticles articles={this.props.articles} />
             </div>
           </div>
         </div>

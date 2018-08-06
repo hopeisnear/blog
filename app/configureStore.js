@@ -16,7 +16,6 @@ export default function configureStore(initialState) {
 
   store.injectedReducers = {};
 
-  // Make reducers hot reloadable
   if (module.hot) {
     module.hot.accept('./reducers', () => {
       store.replaceReducer(createReducer(store.injectedReducers));

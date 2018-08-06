@@ -1,0 +1,12 @@
+img.content-image {
+  bottom: 0;
+  display: block;
+  left: 50%;
+  min-width: 100%;
+  opacity: .2;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  transition: width .3s, opacity .6s;
+  min-height: 100%;
+}

@@ -14,7 +14,7 @@ export default class Article extends PureComponent {
 
   render() {
     return (
-      <div className="blog-article">
+      <div className="main-layout blog-article">
         <Helmet>
           <title>Article details</title>
           <meta

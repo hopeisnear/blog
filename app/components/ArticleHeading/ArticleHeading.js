@@ -20,17 +20,18 @@ const ArticleHeading = ({ article }) => (
       <div className="article-image">
         <Link className="article-image-link" to={`/blog/${article.slug.current}`}>
           <img
+            className="content-image"
             src={imageUrlFor(article.image).ignoreImageParams().width(360).height(252)}
             alt={'article heading'}
           />
         </Link>
       </div>
       <div className="article-title-wrapper">
-        <div className="article-title">
+        <h2 className="article-title">
           <Link className="article-title-link" to={`/blog/${article.slug.current}`}>
             {article.title}
           </Link>
-        </div>
+        </h2>
         <div className="article-timestamp">
           <time className="updated" dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time> by Rafal Szczepankiewicz
         </div>
