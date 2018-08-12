@@ -1,0 +1,37 @@
+.comment {
+  footer {
+    position: relative;
+  }
+  .author {
+    padding-left: 82px;
+    .avatar {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      left: 0;
+      border-radius: 50%
+    }
+  }
+  .timestamp {
+    padding-left: 82px;
+  }
+  .comment-details {
+    margin-top: 20px;
+    position: relative;
+    background-color: rgba(0,0,0,.05);
+    padding: 25px;
+    border-radius: 2px;
+    p:after {
+      border-color: rgba(0,0,0,.05) transparent;
+      z-index: 1;
+      top: -10px;
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      display: block;
+      width: 0;
+      left: 18px;
+    }
+  }
+}
