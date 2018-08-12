@@ -1,21 +1,21 @@
 import sanity from 'utils/sanityProvider';
 
-const query = `*[_type == "articleTeaser"] {
+const query = `*[_type == "article"] {
   image,
   title,
   slug,
-  tags,
   publishedAt,
-  body,
-  'id': slug.current
+  teaser,
+  comments,
+  _id
 }[0...50]
 `;
 
-const fetchArticleQuery = (slug) => `*[_type == "article" && teaser._ref in *[_type=="articleTeaser" && slug.current=="${slug}"]._id] {
+const fetchArticleQuery = (slug) => `*[_type == "article" && slug.current=="${slug}"] {
+  title,
+  slug,
   content,
   comments,
-  teaser->,
-  'id': teaser->slug.current,
   _id
 }
 `;
@@ -28,8 +28,6 @@ export function fetchArticle(articleSlug) {
   return sanity.fetch(fetchArticleQuery(articleSlug))
     .then((response) => {
       const [article] = response;
-      return {
-        content: article.content, comments: article.comments, id: article.id, ...article.teaser, _id: article._id,
-      };
+      return article;
     });
 }

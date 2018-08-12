@@ -11,7 +11,7 @@ export function addCommentAction(comment, commentForm) {
     const selectedArticleName = articleName.includes('?') ? articleName.split('?')[0] : articleName;
 
     const articles = getState().getIn(['blog', 'articles']);
-    const selectedArticle = articles.find((article) => article.id === selectedArticleName && article.content !== undefined);
+    const selectedArticle = articles.find((article) => article.slug.current === selectedArticleName && article.content !== undefined);
 
     if (!comment) {
       if (!selectedArticle.comments) {

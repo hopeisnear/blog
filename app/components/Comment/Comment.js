@@ -29,7 +29,7 @@ export default class Comment extends PureComponent {
           </p>
         </div>
         <div>
-          <button onClick={() => this.setState({ showReplyForm: true })}>reply</button>
+          <button className="reply-to-comment" onClick={() => this.setState({ showReplyForm: true })}>reply</button>
           {this.state.showReplyForm && <AddComment comment={this.props.comment} />}
         </div>
       </article>

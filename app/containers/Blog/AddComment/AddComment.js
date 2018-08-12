@@ -24,6 +24,7 @@ export default class AddComment extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    this.setState({ showCommentDetails: false });
     const {
       content, name, email, website
     } = this.state;
@@ -35,12 +36,11 @@ export default class AddComment extends PureComponent {
   render() {
     return (
       <div className="comment-form-panel">
-        <h3 className="comment-form-header">Leave a Reply</h3>
         <form method="post" noValidate="" onSubmit={this.handleSubmit}>
           <div className="comment-wrapper" onFocus={() => this.expandCommentDetails()}>
             <textarea name="content" maxLength="65525" required="required" placeholder="Enter your comments here" value={this.state.content} onChange={this.handleInputChange} />
           </div>
-          <div className={`comment-details ${!this.state.showCommentDetails ? 'hidden' : ''}`}>
+          <div className={`comment-hidden-fields ${!this.state.showCommentDetails ? 'hidden' : ''}`}>
             <div className="input-wrapper">
               <label className="sticky">
                 <input name="email" type="email" size="30" required maxLength="100" value={this.state.email} onChange={this.handleInputChange} />

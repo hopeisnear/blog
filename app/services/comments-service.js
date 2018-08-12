@@ -15,14 +15,7 @@ export function appendComment(documentId, {
       _type: 'comment',
       _key: uuidv4()
     }])
-    .commit() // Perform the patch and return a promise
-    .then((updatedBike) => {
-      console.log('Hurray, the bike is updated! New document:');
-      console.log(updatedBike);
-    })
-    .catch((err) => {
-      console.error('Oh no, the update failed: ', err.message);
-    });
+    .commit();
 }
 
 export function addNewComment(documentId, {
@@ -41,14 +34,7 @@ export function addNewComment(documentId, {
         _key: uuidv4()
       }]
     })
-    .commit() // Perform the patch and return a promise
-    .then((updatedBike) => {
-      console.log('Hurray, the bike is updated! New document:');
-      console.log(updatedBike);
-    })
-    .catch((err) => {
-      console.error('Oh no, the update failed: ', err.message);
-    });
+    .commit();
 }
 
 
@@ -68,14 +54,7 @@ export function addNewReply(documentId, key, {
         _key: uuidv4()
       }]
     })
-    .commit() // Perform the patch and return a promise
-    .then((updatedBike) => {
-      console.log('Hurray, the bike is updated! New document:');
-      console.log(updatedBike);
-    })
-    .catch((err) => {
-      console.error('Oh no, the update failed: ', err.message);
-    });
+    .commit();
 }
 
 export function appendReply(documentId, key, {
@@ -92,12 +71,5 @@ export function appendReply(documentId, key, {
       _type: 'comment',
       _key: uuidv4()
     }])
-    .commit() // Perform the patch and return a promise
-    .then((updatedBike) => {
-      console.log('Hurray, the bike is updated! New document:');
-      console.log(updatedBike);
-    })
-    .catch((err) => {
-      console.error('Oh no, the update failed: ', err.message);
-    });
+    .commit();
 }

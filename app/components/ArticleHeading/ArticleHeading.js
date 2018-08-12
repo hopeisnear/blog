@@ -39,7 +39,7 @@ const ArticleHeading = ({ article }) => (
       <article className="article-teaser">
         <div>
           <p className="article-short-description">
-            {article.body}
+            {article.teaser}
           </p>
           <Link className="article-title active" to={`/blog/${article.slug.current}`}>
             Read more

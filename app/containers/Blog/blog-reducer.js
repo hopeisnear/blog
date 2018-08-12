@@ -6,8 +6,7 @@ import { FETCH_ARTICLE_RESPONDED } from './Article/article-actions';
 import { ADD_COMMENT_RESPONDED } from './AddComment/add-comment-actions';
 
 const initialState = Map({
-  articles: [],
-  comments: []
+  articles: []
 });
 
 const blogReducer = createReducer(initialState, {
@@ -16,11 +15,11 @@ const blogReducer = createReducer(initialState, {
   },
   [FETCH_ARTICLE_RESPONDED](state, action) {
     const articles = state.get('articles');
-    return state.set('articles', unionBy([action.article], articles, 'id'));
+    return state.set('articles', unionBy([action.article], articles, '_id'));
   },
   [ADD_COMMENT_RESPONDED](state, action) {
     const articles = state.get('articles');
-    return state.set('articles', unionBy([action.updatedArticle], articles, 'id'));
+    return state.set('articles', unionBy([action.updatedArticle], articles, '_id'));
   }
 });
 
