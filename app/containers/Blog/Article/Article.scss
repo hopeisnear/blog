@@ -1,9 +1,17 @@
+@import "app/styles/variables.scss";
+
 .blog-article {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 60px;
 
   a {
     text-decoration: underline;
-    color: red;
+    color: $active-link-color;
+  }
+
+  .blog-article-content {
+    margin-bottom: 60px;
   }
 }

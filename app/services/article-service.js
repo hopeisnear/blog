@@ -13,8 +13,10 @@ const query = `*[_type == "articleTeaser"] {
 
 const fetchArticleQuery = (slug) => `*[_type == "article" && teaser._ref in *[_type=="articleTeaser" && slug.current=="${slug}"]._id] {
   content,
+  comments,
   teaser->,
-  'id': teaser->slug.current
+  'id': teaser->slug.current,
+  _id
 }
 `;
 
@@ -26,6 +28,8 @@ export function fetchArticle(articleSlug) {
   return sanity.fetch(fetchArticleQuery(articleSlug))
     .then((response) => {
       const [article] = response;
-      return { content: article.content, id: article.id, ...article.teaser };
+      return {
+        content: article.content, comments: article.comments, id: article.id, ...article.teaser, _id: article._id,
+      };
     });
 }

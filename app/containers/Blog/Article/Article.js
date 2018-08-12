@@ -2,8 +2,10 @@ import React, { PureComponent } from 'react';
 import { func, string, shape } from 'prop-types';
 import { Helmet } from 'react-helmet';
 import ArticleContent from 'components/ArticleContent';
+import AddComment from 'containers/Blog/AddComment';
 
 import './Article.scss';
+import Comments from '../../../components/Comments';
 
 export default class Article extends PureComponent {
   componentDidMount() {
@@ -25,6 +27,8 @@ export default class Article extends PureComponent {
         <div className="blog-article-content">
           {this.props.article && <ArticleContent article={this.props.article} />}
         </div>
+        {this.props.article && <Comments comments={this.props.article.comments} />}
+        <AddComment />
       </div>
     );
   }

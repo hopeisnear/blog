@@ -1,0 +1,15 @@
+.article-content {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    >div {
+      align-self: center;
+    }
+  }
+  .article-title {
+    text-decoration: none;
+    .back-arrow {
+      font-size: 20px;
+    }
+  }
+}

@@ -10,9 +10,7 @@ import './Articles.scss';
 
 export default class Articles extends PureComponent {
   componentDidMount() {
-    if (isEmpty(this.props.articles)) {
-      this.props.fetchArticles();
-    }
+    this.props.fetchArticles();
   }
 
   render() {

@@ -3,9 +3,11 @@ import { unionBy } from 'lodash';
 import { createReducer } from '../../utils/create-reducer';
 import { FETCH_ARTICLES_RESPONDED } from './Articles/articles-actions';
 import { FETCH_ARTICLE_RESPONDED } from './Article/article-actions';
+import { ADD_COMMENT_RESPONDED } from './AddComment/add-comment-actions';
 
 const initialState = Map({
-  articles: []
+  articles: [],
+  comments: []
 });
 
 const blogReducer = createReducer(initialState, {
@@ -15,6 +17,10 @@ const blogReducer = createReducer(initialState, {
   [FETCH_ARTICLE_RESPONDED](state, action) {
     const articles = state.get('articles');
     return state.set('articles', unionBy([action.article], articles, 'id'));
+  },
+  [ADD_COMMENT_RESPONDED](state, action) {
+    const articles = state.get('articles');
+    return state.set('articles', unionBy([action.updatedArticle], articles, 'id'));
   }
 });
 
