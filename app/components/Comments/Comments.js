@@ -6,27 +6,30 @@ import Comment from 'components/Comment';
 
 import './Comments.scss';
 
-const Comments = (props) => (
+const Comments = ({ comments }) => (
   <div className="Comments">
-    <h2>{props.comments.length} Comments</h2>
+    <h2>
+      {comments.length}
+      Comments
+    </h2>
     <ol className="comments__list">
-      {props.comments.map((comment, commentIndex) => (
+      {comments.map((comment) => (
         <li className="list__item" key={comment._key}>
-          <Comment comment={comment} index={`${commentIndex}`} />
-          {!isEmpty(comment.replies) && renderReplyComments(comment.replies, commentIndex)}
+          <Comment comment={comment} />
+          {!isEmpty(comment.replies) && renderReplyComments(comment.replies)}
         </li>
       ))}
     </ol>
   </div>
 );
 
-function renderReplyComments(replies, commentIndex) {
+function renderReplyComments(replies) {
   return (
     <ol className="replies__list">
-      {replies.map((reply, replyIndex) => (
+      {replies.map((reply) => (
         <li className="list__item" key={reply._key}>
-          <Comment comment={reply} index={`${commentIndex}-${replyIndex}`} />
-          {!isEmpty(reply.replies) && renderReplyComments(reply.replies, `${commentIndex}-${replyIndex}`)}
+          <Comment comment={reply} />
+          {!isEmpty(reply.replies) && renderReplyComments(reply.replies)}
         </li>
       ))}
     </ol>

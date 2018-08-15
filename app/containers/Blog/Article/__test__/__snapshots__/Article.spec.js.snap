@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Article /> should render <Article /> 1`] = `
+<div
+  className="Article"
+>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <title>
+      Article details
+    </title>
+    <meta
+      content="Article Test article content"
+      name="description"
+    />
+  </HelmetWrapper>
+  <div
+    className="article__content"
+  >
+    <ArticleContent
+      article={
+        Object {
+          "comments": Array [],
+        }
+      }
+    />
+  </div>
+  <Comments
+    comments={Array []}
+  />
+  <h3
+    className="article__reply_header"
+  >
+    Leave a Reply
+  </h3>
+  <Connect(AddComment) />
+</div>
+`;

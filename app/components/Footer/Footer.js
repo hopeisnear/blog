@@ -7,7 +7,9 @@ export default function Footer() {
     <footer className="Footer">
       <section>
         <div className="footer__note">
-          Made with <span role="img" aria-label="heart-emoji">❤️</span> by Rafal Szczepankiewicz
+          Made with
+          <span role="img" aria-label="heart-emoji">❤️</span>
+          by Rafal Szczepankiewicz
         </div>
       </section>
     </footer>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { shape } from 'prop-types';
 import AddComment from 'containers/Blog/AddComment';
+import moment from 'moment';
 import './Comment.scss';
 
 export default class Comment extends PureComponent {
@@ -23,7 +24,7 @@ export default class Comment extends PureComponent {
           <div className="comment__timestamp">
             <a disabled href="http://TODO/#comment-43756">
               <time dateTime={this.props.comment.createdAt}>
-                {this.props.comment.createdAt}
+                {moment(this.props.comment.createdAt).format('LL')}
               </time>
             </a>
           </div>
@@ -34,7 +35,7 @@ export default class Comment extends PureComponent {
           </p>
         </div>
         <div>
-          <button className="button green comment__reply" onClick={this.showReplyForm}>reply</button>
+          <button className="button comment__reply" onClick={this.showReplyForm}>reply</button>
           {this.state.showReplyForm && <AddComment comment={this.props.comment} />}
         </div>
       </article>

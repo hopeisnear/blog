@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddComment /> should render <AddComment /> 1`] = `
+<div
+  className="AddComment"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <textarea
+      className="add-comment__input"
+      maxLength="65525"
+      name="content"
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Enter your comments here"
+      required={true}
+    />
+  </form>
+</div>
+`;

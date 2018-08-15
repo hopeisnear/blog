@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Articles /> should render <Articles /> 1`] = `
+<section
+  className="articles"
+>
+  <div
+    className="articles__layout"
+  >
+    <div
+      className="articles__list"
+    >
+      <div
+        key="test-article"
+      >
+        <ArticleHeading
+          article={
+            Object {
+              "slug": Object {
+                "current": "test-article",
+              },
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="articles__sidebar"
+    >
+      <div>
+        <AboutAuthor />
+        <GetInTouch />
+        <TrendingArticles
+          articles={
+            Array [
+              Object {
+                "slug": Object {
+                  "current": "test-article",
+                },
+              },
+            ]
+          }
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

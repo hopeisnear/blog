@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render <Header /> 1`] = `
+<header
+  className="Header"
+>
+  <div
+    className="header__top"
+  >
+    <div
+      className="header__logo"
+    >
+      <Link
+        replace={false}
+        to="/"
+      >
+        &lt; GOOD Developer &gt;
+      </Link>
+    </div>
+    <div>
+      <blockquote
+        className="header__quote"
+      >
+        Adapt what is useful, reject what is useless, and add what is specifically your own.
+      </blockquote>
+    </div>
+  </div>
+</header>
+`;

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Comments /> should render <Comments /> 1`] = `
+<div
+  className="Comments"
+>
+  <h2>
+    1
+    Comments
+  </h2>
+  <ol
+    className="comments__list"
+  >
+    <li
+      className="list__item"
+      key="1"
+    >
+      <Comment
+        comment={
+          Object {
+            "_key": "1",
+            "replies": Array [
+              Object {
+                "_key": "2",
+              },
+              Object {
+                "_key": "3",
+                "replies": Array [
+                  Object {
+                    "_key": "4",
+                  },
+                ],
+              },
+            ],
+          }
+        }
+      />
+      <ol
+        className="replies__list"
+      >
+        <li
+          className="list__item"
+          key="2"
+        >
+          <Comment
+            comment={
+              Object {
+                "_key": "2",
+              }
+            }
+          />
+        </li>
+        <li
+          className="list__item"
+          key="3"
+        >
+          <Comment
+            comment={
+              Object {
+                "_key": "3",
+                "replies": Array [
+                  Object {
+                    "_key": "4",
+                  },
+                ],
+              }
+            }
+          />
+          <ol
+            className="replies__list"
+          >
+            <li
+              className="list__item"
+              key="4"
+            >
+              <Comment
+                comment={
+                  Object {
+                    "_key": "4",
+                  }
+                }
+              />
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</div>
+`;

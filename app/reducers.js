@@ -1,11 +1,11 @@
-import { fromJS } from 'immutable';
+import { Map } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 
 // import globalReducer from 'containers/App/reducer';
 
 export const LOCATION_CHANGED = 'LOCATION_CHANGED';
 
-const routeInitialState = fromJS({
+const routeInitialState = Map({
   location: undefined,
 });
 

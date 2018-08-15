@@ -1,61 +1,39 @@
 /* eslint-disable no-underscore-dangle */
-import { appendComment, addNewComment, addNewReply, appendReply } from 'services/comments-service';
+import {
+  appendComment, addNewComment, addNewReply, appendReply
+} from 'services/comments-service';
 import moment from 'moment';
+import { selectArticle } from 'containers/Blog/Article/article-selector';
 
 export const ADD_COMMENT_RESPONDED = 'ADD_COMMENT_RESPONDED';
 
 export function addCommentAction(comment, commentForm) {
   return (dispatch, getState) => {
-    const pathname = getState().getIn(['route', 'location', 'pathname'], '/blog/');
-    const articleName = pathname.split('/')[2] || '';
-    const selectedArticleName = articleName.includes('?') ? articleName.split('?')[0] : articleName;
-
-    const articles = getState().getIn(['blog', 'articles']);
-    const selectedArticle = articles.find((article) => article.slug.current === selectedArticleName && article.content !== undefined);
+    const selectedArticle = selectArticle()(getState());
 
     if (!comment) {
       if (!selectedArticle.comments) {
-        return addNewComment(selectedArticle._id, {
-          name: commentForm.name,
-          content: commentForm.content,
-          email: commentForm.email,
-          website: commentForm.website,
-          createdAt: moment().format()
-        }).then((response) => {
+        return addNewComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() })
+          .then((response) => {
+            dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+          });
+      }
+      return appendComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() })
+        .then((response) => {
           dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
         });
-      }
-      return appendComment(selectedArticle._id, {
-        name: commentForm.name,
-        content: commentForm.content,
-        email: commentForm.email,
-        website: commentForm.website,
-        createdAt: moment().format()
-      }).then((response) => {
-        dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-      });
     }
-    const commentHaveReply = selectedArticle.comments.some((com) => (com._key === comment._key ? com.replies !== undefined : commentHaveReplies(comment._key, com)));
+    const commentHaveReply = selectedArticle.comments.some((selectedArticleComment) => (selectedArticleComment._key === comment._key ? selectedArticleComment.replies !== undefined : commentHaveReplies(comment._key, selectedArticleComment)));
     if (!commentHaveReply) {
-      return addNewReply(selectedArticle._id, comment._key, {
-        name: commentForm.name,
-        content: commentForm.content,
-        email: commentForm.email,
-        website: commentForm.website,
-        createdAt: moment().format()
-      }).then((response) => {
+      return addNewReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() })
+        .then((response) => {
+          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+        });
+    }
+    return appendReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() })
+      .then((response) => {
         dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
       });
-    }
-    return appendReply(selectedArticle._id, comment._key, {
-      name: commentForm.name,
-      content: commentForm.content,
-      email: commentForm.email,
-      website: commentForm.website,
-      createdAt: moment().format()
-    }).then((response) => {
-      dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-    });
   };
 }
 

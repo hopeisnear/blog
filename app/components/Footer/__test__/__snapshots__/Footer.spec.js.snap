@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should render <Footer /> 1`] = `
+<footer
+  className="Footer"
+>
+  <section>
+    <div
+      className="footer__note"
+    >
+      Made with
+      <span
+        aria-label="heart-emoji"
+        role="img"
+      >
+        ❤️
+      </span>
+      by Rafal Szczepankiewicz
+    </div>
+  </section>
+</footer>
+`;
