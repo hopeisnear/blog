@@ -16,7 +16,7 @@ export default class Article extends PureComponent {
 
   render() {
     return (
-      <div className="main-layout blog-article">
+      <div className="Article">
         <Helmet>
           <title>Article details</title>
           <meta
@@ -24,11 +24,11 @@ export default class Article extends PureComponent {
             content={`Article ${this.props.articleName} content`}
           />
         </Helmet>
-        <div className="blog-article-content">
+        <div className="article__content">
           {this.props.article && <ArticleContent article={this.props.article} />}
         </div>
         {this.props.article && this.props.article.comments && <Comments comments={this.props.article.comments} />}
-        <h3 className="comment-form-header">Leave a Reply</h3>
+        <h3 className="article__reply_header">Leave a Reply</h3>
         <AddComment />
       </div>
     );

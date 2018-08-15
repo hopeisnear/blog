@@ -1,21 +1,16 @@
 @import "app/styles/variables.scss";
 
-.blog-article {
+.Article {
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 60px;
-
-  a {
-    text-decoration: underline;
-    color: $active-link-color;
-  }
-
-  .blog-article-content {
+  padding: 30px 25px 60px;
+  .article__content {
     margin-bottom: 60px;
   }
-
-  .comment-form-header {
+  .article__reply_header {
     border: 0;
     margin-bottom: 0;
   }

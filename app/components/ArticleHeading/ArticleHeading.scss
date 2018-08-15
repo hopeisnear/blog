@@ -1,67 +1,77 @@
-@import '../../styles/variables.scss';
+@import 'app/styles/variables.scss';
 
-.article-wrapper {
+.ArticleHeading {
   flex-basis: 100%;
   display: flex;
   margin-bottom: 35px;
   overflow: hidden;
-  .article {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.article-image-link {
-  position: relative;
-  overflow: hidden;
-  display: block;
-  height: 140px;
-}
-
-.article {
+  flex-direction: column;
   border: 1px solid $main-border-color;
   box-shadow: $main-box-shadow;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
   &:hover {
-    .article-image {
-      img.content-image {
+    .article__header {
+      .header-image {
         opacity: 1;
         width: 115%;
       }
     }
   }
+  .article__header {
+    .header-image__link {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      height: 140px;
+      .header-image {
+        bottom: 0;
+        display: block;
+        left: 50%;
+        min-width: 100%;
+        opacity: .2;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        transition: width 1.6s, opacity 1s;
+        min-height: 100%;
+      }
+    }
+  }
+  .article__title {
+    padding: 20px 30px 0 30px;
+    .title__heading {
+      margin-bottom: 10px;
+      margin-top: 0;
+      .title__link {
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 32px;
+        color: $heading-color;
+      }
+    }
+    .title__timestamp {
+      font-family: $secondary-font;
+      letter-spacing: $secondary-font-letter-spacing;
+      font-size: $secondary-font-size;
+      font-weight: $secondary-font-weight;
+      line-height: $secondary-font-line-height;
+      color: $secondary-color;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .article__body {
+    margin: 0 30px;
+    padding: 0 0 20px;
+  }
 }
 
-.article-title-wrapper {
-  padding: 20px 30px 0 30px;
-}
 
-.article-teaser {
-  margin: 0 30px;
-  padding: 0 0 20px;
-}
 
-.article-title {
-  margin-bottom: 10px;
-  margin-top: 0;
-}
 
-.article-timestamp {
-  font-family: $secondary-font;
-  letter-spacing: $secondary-font-letter-spacing;
-  font-size: $secondary-font-size;
-  font-weight: $secondary-font-weight;
-  line-height: $secondary-font-line-height;
-  color: $secondary-color;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
 
-.article-title-link {
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 32px;
-  color: $heading-color;
-}
+
+
+
+
+
+

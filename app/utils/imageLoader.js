@@ -1,3 +1,8 @@
-// eslint-disable-next-line global-require
-// eslint-disable-next-line import/no-dynamic-require,global-require
-export const loadImage = (imageName) => require(`images/${imageName}`);
+import imageUrlBuilder from '@sanity/image-url';
+import sanity from './sanityProvider';
+
+const imageBuilder = imageUrlBuilder(sanity);
+
+export function imageUrlFor(source) {
+  return imageBuilder.image(source);
+}

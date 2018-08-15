@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { func, array } from 'prop-types';
-import { isEmpty } from 'lodash';
 import ArticleHeading from 'components/ArticleHeading';
 import AboutAuthor from 'components/AboutAuthor';
 import GetInTouch from 'components/GetInTouch';
@@ -15,12 +14,12 @@ export default class Articles extends PureComponent {
 
   render() {
     return (
-      <section className="blog-articles-section">
-        <div className="main-layout blog-articles">
-          <div className="blog-articles-list">
+      <section className="articles">
+        <div className="articles__layout">
+          <div className="articles__list">
             {this.props.articles.map((article) => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
           </div>
-          <div className="blog-articles-sidebar">
+          <div className="articles__sidebar">
             <div>
               <AboutAuthor />
               <GetInTouch />

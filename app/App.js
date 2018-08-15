@@ -5,10 +5,9 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Blog from 'containers/Blog/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import './style.scss';
 
 const App = () => (
-  <div className="app-container">
+  <div className="App">
     <Helmet titleTemplate="Good developer" defaultTitle="Good developer" >
       <meta name="description" content="A Good developer blog" />
     </Helmet>

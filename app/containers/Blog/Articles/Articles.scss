@@ -1,15 +1,22 @@
-@import "../../../styles/variables.scss";
+@import "app/styles/variables.scss";
 
-.blog-articles {
-  display: flex;
-  .blog-articles-list {
-    margin: 0 10px;
-    flex-grow: 1;
-  }
-  .blog-articles-sidebar {
-    flex-basis: 250px;
-    flex-shrink: 0;
-    margin: 0 10px;
+.articles {
+  .articles__layout {
     display: flex;
+    padding: 30px 25px;
+    max-width: 1280px;
+    margin: 0 auto;
+    .articles__list {
+      margin: 0 10px;
+      flex-grow: 1;
+    }
+    .articles__sidebar {
+      flex-basis: 250px;
+      flex-shrink: 0;
+      margin: 0 10px;
+      display: flex;
+    }
   }
 }
+
+

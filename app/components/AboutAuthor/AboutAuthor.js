@@ -2,7 +2,7 @@ import React from 'react';
 import './AboutAuthor.scss';
 
 const AboutAuthor = () => (
-  <div className="about-author">
+  <div className="AboutAuthor">
     <div className="header">
       About the author
     </div>

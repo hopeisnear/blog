@@ -24,41 +24,38 @@ export function addCommentAction(comment, commentForm) {
         }).then((response) => {
           dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
         });
-      } else {
-        return appendComment(selectedArticle._id, {
-          name: commentForm.name,
-          content: commentForm.content,
-          email: commentForm.email,
-          website: commentForm.website,
-          createdAt: moment().format()
-        }).then((response) => {
-          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-        });
       }
-    } else {
-      const commentHaveReply = selectedArticle.comments.some((com) => com._key === comment._key ? com.replies !== undefined : commentHaveReplies(comment._key, com));
-      if (!commentHaveReply) {
-        return addNewReply(selectedArticle._id, comment._key, {
-          name: commentForm.name,
-          content: commentForm.content,
-          email: commentForm.email,
-          website: commentForm.website,
-          createdAt: moment().format()
-        }).then((response) => {
-          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-        });
-      } else {
-        return appendReply(selectedArticle._id, comment._key, {
-          name: commentForm.name,
-          content: commentForm.content,
-          email: commentForm.email,
-          website: commentForm.website,
-          createdAt: moment().format()
-        }).then((response) => {
-          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-        });
-      }
+      return appendComment(selectedArticle._id, {
+        name: commentForm.name,
+        content: commentForm.content,
+        email: commentForm.email,
+        website: commentForm.website,
+        createdAt: moment().format()
+      }).then((response) => {
+        dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+      });
     }
+    const commentHaveReply = selectedArticle.comments.some((com) => (com._key === comment._key ? com.replies !== undefined : commentHaveReplies(comment._key, com)));
+    if (!commentHaveReply) {
+      return addNewReply(selectedArticle._id, comment._key, {
+        name: commentForm.name,
+        content: commentForm.content,
+        email: commentForm.email,
+        website: commentForm.website,
+        createdAt: moment().format()
+      }).then((response) => {
+        dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+      });
+    }
+    return appendReply(selectedArticle._id, comment._key, {
+      name: commentForm.name,
+      content: commentForm.content,
+      email: commentForm.email,
+      website: commentForm.website,
+      createdAt: moment().format()
+    }).then((response) => {
+      dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+    });
   };
 }
 
