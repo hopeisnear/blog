@@ -1,75 +1,31 @@
 import sanity from 'utils/sanityProvider';
 import uuidv4 from 'uuid/v4';
 
-export function appendComment(documentId, {
-  name, content, email, website, createdAt
-}) {
+export function appendComment(documentId, comment) {
   return sanity
-    .patch(documentId) // Document ID to patch
-    .insert('after', 'comments[-1]', [{
-      name,
-      content,
-      email,
-      website,
-      createdAt,
-      _type: 'comment',
-      _key: uuidv4()
-    }])
+    .patch(documentId)
+    .insert('after', 'comments[-1]', [{ ...comment, _type: 'comment', _key: uuidv4() }])
     .commit();
 }
 
-export function addNewComment(documentId, {
-  name, content, email, website, createdAt
-}) {
+export function addNewComment(documentId, comment) {
   return sanity
-    .patch(documentId) // Document ID to patch
-    .set({
-      comments: [{
-        name,
-        content,
-        email,
-        website,
-        createdAt,
-        _type: 'comment',
-        _key: uuidv4()
-      }]
-    })
+    .patch(documentId)
+    .set({ comments: [{ ...comment, _type: 'comment', _key: uuidv4() }] })
     .commit();
 }
 
 
-export function addNewReply(documentId, key, {
-  name, content, email, website, createdAt
-}) {
+export function addNewReply(documentId, commentKey, comment) {
   return sanity
-    .patch(documentId) // Document ID to patch
-    .set({
-      [`comments..[_key=="${key}"].replies`]: [{
-        name,
-        content,
-        email,
-        website,
-        createdAt,
-        _type: 'comment',
-        _key: uuidv4()
-      }]
-    })
+    .patch(documentId)
+    .set({ [`comments..[_key=="${commentKey}"].replies`]: [{ ...comment, _type: 'comment', _key: uuidv4() }] })
     .commit();
 }
 
-export function appendReply(documentId, key, {
-  name, content, email, website, createdAt
-}) {
+export function appendReply(documentId, commentKey, comment) {
   return sanity
-    .patch(documentId) // Document ID to patch
-    .insert('after', `comments..[_key=="${key}"].replies[-1]`, [{
-      name,
-      content,
-      email,
-      website,
-      createdAt,
-      _type: 'comment',
-      _key: uuidv4()
-    }])
+    .patch(documentId)
+    .insert('after', `comments..[_key=="${commentKey}"].replies[-1]`, [{ ...comment, _type: 'comment', _key: uuidv4() }])
     .commit();
 }

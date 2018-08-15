@@ -17,6 +17,15 @@
       display: flex;
     }
   }
+  @media only screen and (max-width: 1024px) {
+    .articles__layout {
+      flex-direction: column;
+      .articles__sidebar {
+        flex-basis: auto;
+        flex-shrink: 1;
+      }
+    }
+  }
 }
 
 

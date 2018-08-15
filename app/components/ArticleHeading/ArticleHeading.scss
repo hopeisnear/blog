@@ -10,9 +10,10 @@
   box-shadow: $main-box-shadow;
   &:hover {
     .article__header {
-      .header-image {
-        opacity: 1;
-        width: 115%;
+      .header-image__link {
+        .header-image {
+          opacity: 1;
+        }
       }
     }
   }
@@ -31,7 +32,7 @@
         position: absolute;
         top: 0;
         transform: translateX(-50%);
-        transition: width 1.6s, opacity 1s;
+        transition: opacity 1s;
         min-height: 100%;
       }
     }
@@ -62,6 +63,9 @@
   .article__body {
     margin: 0 30px;
     padding: 0 0 20px;
+    .right-arrow {
+      font-size: 20px;
+    }
   }
 }
 

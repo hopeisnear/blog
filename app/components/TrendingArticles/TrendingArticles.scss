@@ -26,7 +26,6 @@
         .trending-articles__image {
           img {
             opacity: 1;
-            width: 550%;
           }
         }
       }
@@ -46,7 +45,7 @@
           position: absolute;
           top: 0;
           transform: translateX(-50%);
-          transition: width 1.6s, opacity 1s;
+          transition: opacity 1s;
           min-height: 100%;
         }
       }
@@ -55,6 +54,7 @@
         font-size: $font-size-sm;
         line-height: $font-size-sm-line-height;
         padding: 10px 20px 10px 15px;
+        color: $primary-color;
       }
 
     }

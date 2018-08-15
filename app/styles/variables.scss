@@ -2,6 +2,7 @@ $body-color: #424242;
 $heading-color: #00ab6b;
 $link-color: #222221;
 $active-link-color: #00ab6b;
+$active-link-hover-color: rgb(0, 188, 137);
 
 $primary-font: "Roboto", serif;
 $primary-font-size: 16px;
@@ -26,4 +27,7 @@ $secondary-background-color: #f9f9f9;
 $main-border-color: rgba(0, 0, 0, 0.05);
 $secondary-border-color: #ececec;
 
-$main-box-shadow: 0 2px 5px rgba(0,0,0,.1)
+$main-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+
+$button-color: #00ab6b;
+$button-hover-color: rgb(0, 188, 137);

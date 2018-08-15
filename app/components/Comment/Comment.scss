@@ -1,4 +1,5 @@
 .Comment {
+  margin-top: 20px;
   .comment__footer {
     position: relative;
     .comment__author {
@@ -35,6 +36,6 @@
     }
   }
   .comment__reply {
-    margin-bottom: 20px;
+    margin: 10px 0;
   }
 }

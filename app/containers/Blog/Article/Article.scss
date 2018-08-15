@@ -8,7 +8,8 @@
   flex-direction: column;
   padding: 30px 25px 60px;
   .article__content {
-    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
   .article__reply_header {
     border: 0;

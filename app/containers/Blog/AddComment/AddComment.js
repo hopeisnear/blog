@@ -14,7 +14,7 @@ export default class AddComment extends PureComponent {
     website: undefined
   };
 
-  expandCommentDetail= () => {
+  expandCommentDetails = () => {
     this.setState({ showCommentExpandableSection: true });
   };
 

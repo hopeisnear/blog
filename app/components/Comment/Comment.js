@@ -21,7 +21,7 @@ export default class Comment extends PureComponent {
             <b>{this.props.comment.name}</b>
           </div>
           <div className="comment__timestamp">
-            <a href="http://TODO/#comment-43756">
+            <a disabled href="http://TODO/#comment-43756">
               <time dateTime={this.props.comment.createdAt}>
                 {this.props.comment.createdAt}
               </time>
@@ -34,7 +34,7 @@ export default class Comment extends PureComponent {
           </p>
         </div>
         <div>
-          <button className="comment__reply" onClick={this.showReplyForm}>reply</button>
+          <button className="button green comment__reply" onClick={this.showReplyForm}>reply</button>
           {this.state.showReplyForm && <AddComment comment={this.props.comment} />}
         </div>
       </article>

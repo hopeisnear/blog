@@ -33,7 +33,7 @@ const ArticleHeading = ({ article }) => (
           {article.teaser}
         </p>
         <Link className="active" to={`/blog/${article.slug.current}`}>
-            Read more
+          Read more <span className="right-arrow">&#xbb;</span>
         </Link>
       </div>
     </article>
