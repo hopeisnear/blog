@@ -10,6 +10,8 @@ export default ({ key, reducer }) => (WrappedComponent) => {
       store: shape({}).isRequired
     };
 
+    static displayName = `withReducer(${(WrappedComponent.displayName || WrappedComponent.name || 'Component')})`;
+
     injectors = getInjectors(this.context.store);
 
     componentWillMount() {
