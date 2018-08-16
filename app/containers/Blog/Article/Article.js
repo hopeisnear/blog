@@ -9,25 +9,28 @@ import './Article.scss';
 
 export default class Article extends PureComponent {
   componentDidMount() {
-    if (!this.props.article) {
-      this.props.fetchArticle(this.props.articleName);
-    }
+    const { article, fetchArticle, articleName } = this.props;
+    !article && fetchArticle(articleName);
   }
 
   render() {
+    const { articleName, article } = this.props;
+
     return (
       <div className="Article">
+Articles.js
+
         <Helmet>
           <title>Article details</title>
           <meta
             name="description"
-            content={`Article ${this.props.articleName} content`}
+            content={`Article ${articleName} content`}
           />
         </Helmet>
         <div className="article__content">
-          {this.props.article && <ArticleContent article={this.props.article} />}
+          {article && <ArticleContent article={article} />}
         </div>
-        {this.props.article && this.props.article.comments && <Comments comments={this.props.article.comments} />}
+        {article && article.comments && <Comments comments={article.comments} />}
         <h3 className="article__reply_header">Leave a Reply</h3>
         <AddComment />
       </div>

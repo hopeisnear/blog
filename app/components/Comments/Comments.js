@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { array } from 'prop-types';
+import { arrayOf, shape } from 'prop-types';
 import { isEmpty } from 'lodash';
 import Comment from 'components/Comment';
 
@@ -13,7 +13,7 @@ const Comments = ({ comments }) => (
       Comments
     </h2>
     <ol className="comments__list">
-      {comments.map((comment) => (
+      {comments.map(comment => (
         <li className="list__item" key={comment._key}>
           <Comment comment={comment} />
           {!isEmpty(comment.replies) && renderReplyComments(comment.replies)}
@@ -26,7 +26,7 @@ const Comments = ({ comments }) => (
 function renderReplyComments(replies) {
   return (
     <ol className="replies__list">
-      {replies.map((reply) => (
+      {replies.map(reply => (
         <li className="list__item" key={reply._key}>
           <Comment comment={reply} />
           {!isEmpty(reply.replies) && renderReplyComments(reply.replies)}
@@ -37,7 +37,7 @@ function renderReplyComments(replies) {
 }
 
 Comments.propTypes = {
-  comments: array.isRequired
+  comments: arrayOf(shape({})).isRequired
 };
 
 export default Comments;

@@ -23,7 +23,9 @@ export function addCommentAction(comment, commentForm) {
           dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
         });
     }
-    const commentHaveReply = selectedArticle.comments.some((selectedArticleComment) => (selectedArticleComment._key === comment._key ? selectedArticleComment.replies !== undefined : commentHaveReplies(comment._key, selectedArticleComment)));
+
+    const commentHaveReply = selectedArticle.comments
+      .some(selectedArticleComment => (selectedArticleComment._key === comment._key ? selectedArticleComment.replies !== undefined : commentHaveReplies(comment._key, selectedArticleComment)));
     if (!commentHaveReply) {
       return addNewReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() })
         .then((response) => {

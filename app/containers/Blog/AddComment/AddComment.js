@@ -27,39 +27,51 @@ export default class AddComment extends PureComponent {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ showCommentExpandableSection: false });
-    this.props.addComment(this.props.comment, {
-      content: this.state.content, name: this.state.name, email: this.state.email, website: this.state.website
-    });
+
+    const { addComment, comment } = this.props;
+    const { content, name, email, website } = this.state;
+    addComment(comment, { content, name, email, website });
   };
 
   render() {
+    const { content, showCommentExpandableSection, email, name, website } = this.state;
+
     return (
       <div className="AddComment">
         <form onSubmit={this.handleSubmit}>
-          <textarea className="add-comment__input" name="content" maxLength="65525" required placeholder="Enter your comments here" value={this.state.content} onChange={this.handleInputChange} onFocus={this.expandCommentDetails} />
-          {this.state.showCommentExpandableSection && (
+          <textarea
+            className="add-comment__input"
+            name="content"
+            maxLength="65525"
+            required
+            placeholder="Enter your comments here"
+            value={content}
+            onChange={this.handleInputChange}
+            onFocus={this.expandCommentDetails}
+          />
+          {showCommentExpandableSection && (
             <div className="add-comment__expandable-section">
               <div>
                 <label className="sticky">
-                  <input name="email" type="email" size="30" required maxLength="100" value={this.state.email} onChange={this.handleInputChange} />
+                  <input name="email" type="email" size="30" required maxLength="100" value={email} onChange={this.handleInputChange} />
                   <label htmlFor="email">Email</label>
                 </label>
               </div>
               <div>
                 <label className="sticky">
-                  <input name="name" type="text" size="30" required maxLength="100" value={this.state.name} onChange={this.handleInputChange} />
+                  <input name="name" type="text" size="30" required maxLength="100" value={name} onChange={this.handleInputChange} />
                   <label htmlFor="name">Name</label>
                 </label>
               </div>
               <div>
                 <label className="sticky">
-                  <input name="website" type="url" size="30" maxLength="200" value={this.state.website} onChange={this.handleInputChange} />
+                  <input name="website" type="url" size="30" maxLength="200" value={website} onChange={this.handleInputChange} />
                   <label htmlFor="website">Website (optional)</label>
                 </label>
               </div>
             </div>
           )}
-          {this.state.showCommentExpandableSection && (
+          {showCommentExpandableSection && (
             <div className="add-comment__form-submit">
               <input name="submit" type="submit" className="form-submit__input" value="Post Comment" />
             </div>

@@ -14,29 +14,36 @@ export default class Comment extends PureComponent {
   };
 
   render() {
+    const { comment } = this.props;
+    const { showReplyForm } = this.state;
+
     return (
       <article className="Comment">
         <footer className="comment__footer">
           <div className="comment__author">
-            <img alt="avatar" src="https://0.gravatar.com/avatar/f734130d2be486763e433ed0bf4fb6ac?s=60&amp;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96" className="author__avatar" />
-            <b>{this.props.comment.name}</b>
+            <img
+              alt="avatar"
+              src="https://0.gravatar.com/avatar/f734130d2be486763e433ed0bf4fb6ac?s=60&amp;d=https%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96"
+              className="author__avatar"
+            />
+            <b>{comment.name}</b>
           </div>
           <div className="comment__timestamp">
             <a disabled href="http://TODO/#comment-43756">
-              <time dateTime={this.props.comment.createdAt}>
-                {moment(this.props.comment.createdAt).format('LL')}
+              <time dateTime={comment.createdAt}>
+                {moment(comment.createdAt).format('LL')}
               </time>
             </a>
           </div>
         </footer>
         <div className="comment__body">
           <p className="comment__content">
-            {this.props.comment.content}
+            {comment.content}
           </p>
         </div>
         <div>
-          <button className="button comment__reply" onClick={this.showReplyForm}>reply</button>
-          {this.state.showReplyForm && <AddComment comment={this.props.comment} />}
+          <button type="button" className="button comment__reply" onClick={this.showReplyForm}>reply</button>
+          {showReplyForm && <AddComment comment={comment} />}
         </div>
       </article>
     );
@@ -44,5 +51,5 @@ export default class Comment extends PureComponent {
 }
 
 Comment.propTypes = {
-  comment: shape({})
+  comment: shape({}).isRequired
 };

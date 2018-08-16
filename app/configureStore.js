@@ -5,7 +5,7 @@ import createReducer from './reducers';
 
 export default function configureStore(initialState) {
   const enhancers = [
-    applyMiddleware(thunk),
+    applyMiddleware(thunk)
   ];
 
   const store = createStore(

@@ -11,7 +11,7 @@ const query = `*[_type == "article"] {
 }[0...50]
 `;
 
-const fetchArticleQuery = (slug) => `*[_type == "article" && slug.current=="${slug}"] {
+const fetchArticleQuery = slug => `*[_type == "article" && slug.current=="${slug}"] {
   title,
   slug,
   content,

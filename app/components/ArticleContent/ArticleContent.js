@@ -8,16 +8,18 @@ import './ArticleContent.scss';
 
 const serializers = {
   types: {
-    code: (props) => (
-      <pre style={{ backgroundColor: 'blue' }} data-language={props.node.language}>
-        <code>{props.node.snippet}</code>
+    // eslint-disable-next-line react/prop-types
+    code: ({ node }) => (
+      <pre style={{ backgroundColor: 'blue' }} data-language={node.language}>
+        <code>{node.snippet}</code>
       </pre>
     )
   },
   marks: {
-    pre: (props) => (
-      <pre style={{ backgroundColor: 'red' }} data-language={'javascript'}>
-        {props.children}
+    // eslint-disable-next-line react/prop-types
+    pre: ({ children }) => (
+      <pre style={{ backgroundColor: 'red' }} data-language="javascript">
+        {children}
       </pre>
     )
   }
@@ -29,7 +31,9 @@ const ArticleContent = ({ article }) => (
     <article className="article-content__header">
       <h1 className="header__title">{article.title}</h1>
       <Link className="header__link" to="/blog">
-        <span className="back-arrow">&#171;</span> <span>View all articles</span>
+        <span className="back-arrow">&#171;</span>
+        {' '}
+        <span>View all articles</span>
       </Link>
     </article>
     <section className="article-content__body">
@@ -49,4 +53,3 @@ ArticleContent.propTypes = {
 };
 
 export default ArticleContent;
-

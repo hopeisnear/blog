@@ -8,7 +8,7 @@ import Footer from 'components/Footer';
 
 const App = () => (
   <div className="App">
-    <Helmet titleTemplate="Good developer" defaultTitle="Good developer" >
+    <Helmet titleTemplate="Good developer" defaultTitle="Good developer">
       <meta name="description" content="A Good developer blog" />
     </Helmet>
     <Header />

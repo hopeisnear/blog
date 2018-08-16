@@ -6,7 +6,6 @@ import Comment from '../Comment';
 
 describe('<Comment />', () => {
   test('should render <Comment />', () => {
-
     const commentComponent = shallow(<Comment comment={createComment()} />);
 
     expect(commentComponent).toMatchSnapshot();

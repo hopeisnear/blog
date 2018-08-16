@@ -1,65 +1,111 @@
 {
-    "parser": "babel-eslint",
-    "extends": ["airbnb", "plugin:react/recommended"],
-    "env": {
-      "browser": true,
-      "node": true,
-      "jest": true,
-      "es6": true
-    },
-    "plugins": [
-      "react",
-      "jsx-a11y"
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "lodash"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "react/no-typos": 0,
+    // FIXME need fix to recognize { func, number, array } as valid syntax
+    "prefer-destructuring": 0,
+    "prefer-promise-reject-errors": 0,
+    "react/destructuring-assignment": 0,
+    "lodash/chaining": 2,
+    "comma-dangle": [
+      2,
+      "never"
     ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
+    "function-paren-newline": [
+      2,
+      "consistent"
+    ],
+    "max-len": [
+      2,
+      200
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
       }
-    },
-    "rules": {
-      "no-param-reassign": "off",
-      "function-paren-newline": "off",
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        "error",
-        "only-multiline"
-      ],
-      "import/no-extraneous-dependencies": 0,
-      "import/prefer-default-export": 0,
-      "indent": [
-        2,
-        2,
-        {
-          "SwitchCase": 1
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": [
+          "memo",
+          "result"
+        ]
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true
+      }
+    ],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": {
+          "multiline": false,
+          "consistent": true
         }
-      ],
-      "max-len": 0,
-      "no-console": 1,
-      "react/forbid-prop-types": 0,
-      "react/jsx-curly-brace-presence": "off",
-      "react/jsx-first-prop-new-line": [
-        2,
-        "multiline"
-      ],
-      "react/jsx-filename-extension": 0,
-      "react/require-default-props": 0,
-      "react/self-closing-comp": 0,
-      "jsx-a11y/anchor-is-valid": 0
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "./config/webpack.prod.babel.js"
-        }
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "onClick",
+          "to",
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "noHref",
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.prod.babel.js"
       }
     }
   }
+}

@@ -5,7 +5,6 @@ import Comments from '../Comments';
 
 describe('<Comments />', () => {
   test('should render <Comments />', () => {
-
     const commentsComponent = shallow(<Comments comments={createComments()} />);
 
     expect(commentsComponent).toMatchSnapshot();

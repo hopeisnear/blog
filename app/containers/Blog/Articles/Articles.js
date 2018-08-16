@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { func, array } from 'prop-types';
+import { func, arrayOf, shape } from 'prop-types';
 import ArticleHeading from 'components/ArticleHeading';
 import AboutAuthor from 'components/AboutAuthor';
 import GetInTouch from 'components/GetInTouch';
@@ -13,17 +13,19 @@ export default class Articles extends PureComponent {
   }
 
   render() {
+    const { articles } = this.props;
+
     return (
       <section className="articles">
         <div className="articles__layout">
           <div className="articles__list">
-            {this.props.articles.map((article) => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
+            {articles.map(article => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
           </div>
           <div className="articles__sidebar">
             <div>
               <AboutAuthor />
               <GetInTouch />
-              <TrendingArticles articles={this.props.articles} />
+              <TrendingArticles articles={articles} />
             </div>
           </div>
         </div>
@@ -33,6 +35,6 @@ export default class Articles extends PureComponent {
 }
 
 Articles.propTypes = {
-  articles: array.isRequired,
+  articles: arrayOf(shape({})).isRequired,
   fetchArticles: func.isRequired
 };

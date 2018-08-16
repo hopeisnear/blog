@@ -6,8 +6,7 @@ const AboutAuthor = () => (
     <div className="header">
       About the author
     </div>
-    <div className="photo">
-    </div>
+    <div className="photo" />
     <div className="content">
       <strong>Rafal Szczepankiewicz</strong>
       <p className="content-description">

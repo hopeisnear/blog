@@ -6,7 +6,7 @@ import { fetchArticlesAction } from './articles-actions';
 import { selectArticles } from './articles-selector';
 import Articles from './Articles';
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchArticles: () => dispatch(fetchArticlesAction())
 });
 

@@ -13,7 +13,7 @@ const ArticleHeading = ({ article }) => (
         <img
           className="header-image"
           src={imageUrlFor(article.image).ignoreImageParams().width(360).height(252)}
-          alt={'article'}
+          alt="article"
         />
       </Link>
     </div>
@@ -24,7 +24,9 @@ const ArticleHeading = ({ article }) => (
         </Link>
       </h2>
       <div className="title__timestamp">
-        <time dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time> by Rafal Szczepankiewicz
+        <time dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time>
+        {' '}
+by Rafal Szczepankiewicz
       </div>
     </div>
     <article className="article__body">
@@ -33,7 +35,9 @@ const ArticleHeading = ({ article }) => (
           {article.teaser}
         </p>
         <Link className="active" to={`/blog/${article.slug.current}`}>
-          Read more <span className="right-arrow">&#xbb;</span>
+          Read more
+          {' '}
+          <span className="right-arrow">&#xbb;</span>
         </Link>
       </div>
     </article>
@@ -45,4 +49,3 @@ ArticleHeading.propTypes = {
 };
 
 export default ArticleHeading;
-
