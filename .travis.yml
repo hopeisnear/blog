@@ -1,11 +1,11 @@
 language: node_js
 
-os: osx
+os: linux
 
 node_js:
   - 8
   - 6
-  
+
 script:
   - npm run test
   - npm run build
