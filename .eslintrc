@@ -30,6 +30,11 @@
     "prefer-promise-reject-errors": 0,
     "react/destructuring-assignment": 0,
     "lodash/chaining": 2,
+    "react/jsx-no-bind": [2, {
+      "ignoreRefs": false,
+      "allowArrowFunctions": true,
+      "allowBind": false
+    }],
     "comma-dangle": [
       2,
       "never"
