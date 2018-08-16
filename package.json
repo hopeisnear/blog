@@ -1,14 +1,14 @@
 {
-  "name": "good-developer-blog",
-  "version": "0.0.1",
+  "name": "GOOD-Developer",
+  "version": "0.1.0",
   "description": "Blog about programming best practices",
   "repository": {
     "type": "git",
     "url": "git@github.com:hopeisnear/blog.git"
   },
   "engines": {
-    "npm": ">=3",
-    "node": ">=5"
+    "npm": ">=5",
+    "node": ">=8"
   },
   "author": "Rafal Szczepankiewicz",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
-    "start:prod": "cross-env NODE_ENV=production node server",
+    "start:prod": "node server",
     "clean": "npm run test:clean && npm run build:clean",
     "lint": "eslint ./app --quiet --cache",
     "lint:fix": "eslint ./app --fix --cache",
