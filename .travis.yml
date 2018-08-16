@@ -24,7 +24,7 @@ deploy:
   local_dir: dpl_cd_upload
   skip_cleanup: true
   on: &2
-    repo: organization/hopeisnear
+    repo: hopeisnear/blog
   bucket: blog-front
   region: eu-central-1
 - provider: codedeploy
@@ -42,6 +42,6 @@ script:
 - yarn run lint
 - yarn run test
 - yarn run build
-- zip -r latest *
+- zip -r latest app/*
 - mkdir -p dpl_cd_upload
 - mv latest.zip dpl_cd_upload/latest.zip
