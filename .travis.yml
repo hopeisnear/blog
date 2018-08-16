@@ -6,9 +6,9 @@ node_js:
   - 10
 
 script:
-  - npm run lint
-  - npm run test
-  - npm run build
+  - yarn run lint
+  - yarn run test
+  - yarn run build
 
 notifications:
   email:
