@@ -1,10 +1,10 @@
 import { stub } from 'sinon';
-import * as sanityProvider from 'utils/sanityProvider';
+import sanity from 'utils/sanityProvider';
 import { fetchArticle, fetchArticles } from '../article-service';
 
 describe('article-service', () => {
   test('should fetch articles', () => {
-    stub(sanityProvider, 'fetch').returns(Promise.resolve(['article1', 'article2']));
+    stub(sanity, 'fetch').returns(['article1', 'article2']);
 
     const articles = fetchArticles();
 
@@ -12,15 +12,17 @@ describe('article-service', () => {
   });
 
   test('should fetch article', () => {
-    stub(sanityProvider, 'fetch').returns(Promise.resolve(['response']));
+    stub(sanity, 'fetch').returns(Promise.resolve(['response']));
 
-    const article = fetchArticle('test-article');
+    const articlePromise = fetchArticle('test-article');
 
-    expect(sanityProvider.fetch.args[0][0]).contains('test-article');
-    expect(article).toBe('response');
+    expect(sanity.fetch.args[0][0]).toContain('test-article');
+    return articlePromise.then((article) => {
+      expect(article).toBe('response');
+    });
   });
 
   afterEach(() => {
-    sanityProvider.fetch.restore();
+    sanity.fetch.restore();
   });
 });

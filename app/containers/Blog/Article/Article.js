@@ -18,8 +18,6 @@ export default class Article extends PureComponent {
 
     return (
       <div className="Article">
-Articles.js
-
         <Helmet>
           <title>Article details</title>
           <meta

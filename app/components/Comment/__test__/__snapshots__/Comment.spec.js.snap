@@ -47,6 +47,7 @@ exports[`<Comment /> should render <Comment /> 1`] = `
     <button
       className="button comment__reply"
       onClick={[Function]}
+      type="button"
     >
       reply
     </button>
