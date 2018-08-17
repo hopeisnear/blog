@@ -23,12 +23,14 @@ exports[`<Article /> should render <Article /> 1`] = `
       article={
         Object {
           "comments": Array [],
+          "commentsCount": 2,
         }
       }
     />
   </div>
   <Comments
     comments={Array []}
+    commentsCount={2}
   />
   <h3
     className="article__reply_header"

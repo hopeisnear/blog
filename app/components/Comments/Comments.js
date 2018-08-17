@@ -1,16 +1,15 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { arrayOf, shape } from 'prop-types';
+import { arrayOf, shape, number } from 'prop-types';
 import { isEmpty } from 'lodash';
 import Comment from 'components/Comment';
 
 import './Comments.scss';
 
-const Comments = ({ comments }) => (
+const Comments = ({ comments, commentsCount }) => (
   <div className="Comments">
     <h2>
-      {comments.length}
-      Comments
+      <span>{`${commentsCount} Comments`}</span>
     </h2>
     <ol className="comments__list">
       {comments.map(comment => (
@@ -37,7 +36,8 @@ function renderReplyComments(replies) {
 }
 
 Comments.propTypes = {
-  comments: arrayOf(shape({})).isRequired
+  comments: arrayOf(shape({})).isRequired,
+  commentsCount: number.isRequired
 };
 
 export default Comments;

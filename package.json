@@ -2,6 +2,7 @@
   "name": "GOOD-Developer",
   "version": "0.1.0",
   "description": "Blog about programming best practices",
+  "main": "app/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:hopeisnear/blog.git"
@@ -14,7 +15,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
@@ -24,9 +25,9 @@
     "lint:fix": "eslint ./app --fix --cache",
     "pretest": "npm run test:clean",
     "test:clean": "rimraf ./coverage",
-    "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:update": "cross-env NODE_ENV=test jest -u",
-    "test:watch": "cross-env NODE_ENV=test jest -o --watch"
+    "test": "cross-env NODE_ENV=test jest --cache --coverage --silent -i",
+    "test:dev": "cross-env NODE_ENV=test jest --cache --watch",
+    "test:update": "cross-env NODE_ENV=test jest --cache -u -i"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.2",

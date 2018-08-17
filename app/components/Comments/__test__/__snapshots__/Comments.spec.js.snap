@@ -5,8 +5,9 @@ exports[`<Comments /> should render <Comments /> 1`] = `
   className="Comments"
 >
   <h2>
-    1
-    Comments
+    <span>
+      4 Comments
+    </span>
   </h2>
   <ol
     className="comments__list"

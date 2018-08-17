@@ -23,7 +23,7 @@ describe('reducer injectors', () => {
 
   describe('getInjectors', () => {
     beforeEach(() => {
-      store = configureStore({}, memoryHistory);
+      store = configureStore(fromJS({}), memoryHistory);
     });
 
     test('should return injectors', () => {
@@ -43,7 +43,7 @@ describe('reducer injectors', () => {
 
   describe('injectReducer helper', () => {
     beforeEach(() => {
-      store = configureStore({}, memoryHistory);
+      store = configureStore(fromJS({}), memoryHistory);
       injectReducer = injectReducerFactory(store, true);
     });
 

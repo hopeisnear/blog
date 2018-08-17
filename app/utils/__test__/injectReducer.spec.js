@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import { identity } from 'lodash';
 import { stub, assert } from 'sinon';
+import { Map } from 'immutable';
 
 import configureStore from '../../configureStore';
 import injectReducer from '../injectReducer';
@@ -21,7 +22,7 @@ describe('injectReducer decorator', () => {
     injectors = {
       injectReducer: stub()
     };
-    store = configureStore({}, browserHistory);
+    store = configureStore(Map({}), browserHistory);
     stub(reducerInjectors, 'default').returns(injectors);
     ComponentWithReducer = injectReducer({ key: 'test', reducer })(Component);
   });

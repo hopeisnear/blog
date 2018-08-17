@@ -9,8 +9,8 @@ import './Article.scss';
 
 export default class Article extends PureComponent {
   componentDidMount() {
-    const { article, fetchArticle, articleName } = this.props;
-    !article && fetchArticle(articleName);
+    const { article, fetchArticle } = this.props;
+    !article && fetchArticle();
   }
 
   render() {
@@ -28,7 +28,7 @@ export default class Article extends PureComponent {
         <div className="article__content">
           {article && <ArticleContent article={article} />}
         </div>
-        {article && article.comments && <Comments comments={article.comments} />}
+        {article && article.comments && <Comments comments={article.comments} commentsCount={article.commentsCount} />}
         <h3 className="article__reply_header">Leave a Reply</h3>
         <AddComment />
       </div>

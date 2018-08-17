@@ -26,11 +26,12 @@ export default class AddComment extends PureComponent {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ showCommentExpandableSection: false });
 
-    const { addComment, comment } = this.props;
+    const { addComment, comment, onAddComment } = this.props;
     const { content, name, email, website } = this.state;
     addComment(comment, { content, name, email, website });
+    this.setState({ showCommentExpandableSection: false, content: undefined, email: undefined, name: undefined, website: undefined });
+    onAddComment();
   };
 
   render() {
@@ -84,9 +85,11 @@ export default class AddComment extends PureComponent {
 
 AddComment.propTypes = {
   addComment: func.isRequired,
+  onAddComment: func,
   comment: shape({})
 };
 
 AddComment.defaultProps = {
-  comment: undefined
+  comment: undefined,
+  onAddComment: () => {}
 };

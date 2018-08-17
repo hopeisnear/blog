@@ -13,6 +13,10 @@ export default class Comment extends PureComponent {
     this.setState({ showReplyForm: true });
   };
 
+  hideReplyForm = () => {
+    this.setState({ showReplyForm: false });
+  };
+
   render() {
     const { comment } = this.props;
     const { showReplyForm } = this.state;
@@ -43,7 +47,7 @@ export default class Comment extends PureComponent {
         </div>
         <div>
           <button type="button" className="button comment__reply" onClick={this.showReplyForm}>reply</button>
-          {showReplyForm && <AddComment comment={comment} />}
+          {showReplyForm && <AddComment onAddComment={this.hideReplyForm} comment={comment} />}
         </div>
       </article>
     );
