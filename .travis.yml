@@ -42,6 +42,6 @@ script:
 - yarn run lint
 - yarn run test
 - yarn run build
-- zip -r latest app/*
+- zip -r latest build/* appspec.yml server/* package.json
 - mkdir -p dpl_cd_upload
 - mv latest.zip dpl_cd_upload/latest.zip
