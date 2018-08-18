@@ -3,7 +3,7 @@ import { func, arrayOf, shape } from 'prop-types';
 import ArticleHeading from 'components/ArticleHeading';
 import AboutAuthor from 'components/AboutAuthor';
 import GetInTouch from 'components/GetInTouch';
-import TrendingArticles from 'components/TrendingArticles';
+import TrendingArticles from 'containers/TrendingArticles/Loadable';
 
 import './Articles.scss';
 

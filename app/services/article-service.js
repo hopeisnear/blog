@@ -1,6 +1,6 @@
 import sanity from 'utils/sanityProvider';
 
-const query = `*[_type == "article"] {
+const fetchArticlesQuery = `*[_type == "article"] | order(publishedAt desc) {
   image,
   title,
   slug,
@@ -21,7 +21,19 @@ const fetchArticleQuery = slug => `*[_type == "article" && slug.current=="${slug
 `;
 
 export function fetchArticles() {
-  return sanity.fetch(query);
+  return sanity.fetch(fetchArticlesQuery);
+}
+
+const fetchTrendingArticlesQuery = `*[_type == "article"] | order(count(comments) desc) {
+  image,
+  title,
+  slug,
+  comments
+}[0...8]
+`;
+
+export function fetchTrendingArticles() {
+  return sanity.fetch(fetchTrendingArticlesQuery);
 }
 
 const countReplies = replies => replies
