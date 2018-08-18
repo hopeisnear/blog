@@ -1,7 +1,8 @@
 import { stub } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as articleService from 'services/article-service';
-import { FETCH_ARTICLES_RESPONDED, fetchArticlesAction } from '../articles-actions';
+import { FETCH_ARTICLES_RESPONDED } from 'common/article-actions';
+import { fetchArticlesAction } from '../articles-actions';
 
 describe('articles-actions', () => {
   test('should fetch articles', () => {

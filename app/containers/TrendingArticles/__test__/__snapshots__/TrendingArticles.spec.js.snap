@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TrendingArticles /> should render <TrendingArticles /> 1`] = `
+<div
+  className="TrendingArticles"
+>
+  <div
+    className="trending-articles__header"
+  >
+    Trending articles
+  </div>
+  <div
+    className="trending-articles__body"
+  >
+    <nav>
+      <Link
+        className="trending-articles__link"
+        key="article-1"
+        replace={false}
+        to="/blog/article-1"
+      >
+        <span
+          className="trending-articles__image"
+        >
+          <img
+            alt="article heading"
+            src="image1"
+          />
+        </span>
+        <span
+          className="trending-articles__title"
+        >
+          article-1-title
+        </span>
+      </Link>
+      <Link
+        className="trending-articles__link"
+        key="article-2"
+        replace={false}
+        to="/blog/article-2"
+      >
+        <span
+          className="trending-articles__image"
+        >
+          <img
+            alt="article heading"
+            src="image2"
+          />
+        </span>
+        <span
+          className="trending-articles__title"
+        >
+          article-2-title
+        </span>
+      </Link>
+    </nav>
+  </div>
+</div>
+`;

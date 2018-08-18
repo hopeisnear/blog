@@ -37,6 +37,6 @@ exports[`<Article /> should render <Article /> 1`] = `
   >
     Leave a Reply
   </h3>
-  <Connect(AddComment) />
+  <LoadableComponent />
 </div>
 `;

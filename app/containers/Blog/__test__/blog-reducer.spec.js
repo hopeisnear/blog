@@ -1,8 +1,7 @@
 import { Map } from 'immutable';
+import { FETCH_ARTICLE_RESPONDED, FETCH_ARTICLES_RESPONDED, FETCH_TRENDING_ARTICLES_RESPONDED } from 'common/article-actions';
+import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
 import blogReducer from '../blog-reducer';
-import { FETCH_ARTICLES_RESPONDED } from '../../Articles/articles-actions';
-import { FETCH_ARTICLE_RESPONDED } from '../../Article/article-actions';
-import { ADD_COMMENT_RESPONDED } from '../../AddComment/add-comment-actions';
 
 describe('blog-reducer', () => {
   test('should validate FETCH_ARTICLES_RESPONDED', () => {
@@ -21,5 +20,11 @@ describe('blog-reducer', () => {
     const state = blogReducer(Map({ articles: [{ _id: '1' }] }), { type: ADD_COMMENT_RESPONDED, updatedArticle: { _id: '1', content: 'test article' } });
 
     expect(state.get('articles')).toEqual([{ _id: '1', content: 'test article' }]);
+  });
+
+  test('should validate FETCH_TRENDING_ARTICLES_RESPONDED', () => {
+    const state = blogReducer(undefined, { type: FETCH_TRENDING_ARTICLES_RESPONDED, trendingArticles: [{ _id: '1' }] });
+
+    expect(state.get('trendingArticles')).toEqual([{ _id: '1' }]);
   });
 });

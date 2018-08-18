@@ -25,7 +25,7 @@ export default class Articles extends PureComponent {
             <div>
               <AboutAuthor />
               <GetInTouch />
-              <TrendingArticles articles={articles} />
+              <TrendingArticles />
             </div>
           </div>
         </div>

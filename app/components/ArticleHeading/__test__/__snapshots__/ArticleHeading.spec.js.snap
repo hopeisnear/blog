@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArticleHeading /> should render <ArticleHeading /> 1`] = `
+<article
+  className="ArticleHeading"
+>
+  <div
+    className="article__header"
+  >
+    <Link
+      className="header-image__link"
+      replace={false}
+      to="/blog/article-1"
+    >
+      <img
+        alt="article"
+        className="header-image"
+        src="image1"
+      />
+    </Link>
+  </div>
+  <div
+    className="article__title"
+  >
+    <h2
+      className="title__heading"
+    >
+      <Link
+        className="title__link"
+        replace={false}
+        to="/blog/article-1"
+      >
+        article-1-title
+      </Link>
+    </h2>
+    <div
+      className="title__timestamp"
+    >
+      <time
+        dateTime="2018-08-18T15:01:53Z"
+      >
+        Aug 18, 2018
+      </time>
+      <span>
+         by Rafal Szczepankiewicz
+      </span>
+    </div>
+  </div>
+  <article
+    className="article__body"
+  >
+    <div>
+      <p />
+      <Link
+        className="active"
+        replace={false}
+        to="/blog/article-1"
+      >
+        <span>
+          Read more &#xbb
+        </span>
+      </Link>
+    </div>
+  </article>
+</article>
+`;

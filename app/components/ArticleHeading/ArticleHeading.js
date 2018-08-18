@@ -25,8 +25,7 @@ const ArticleHeading = ({ article }) => (
       </h2>
       <div className="title__timestamp">
         <time dateTime={article.publishedAt}>{moment(article.publishedAt).format('ll')}</time>
-        {' '}
-by Rafal Szczepankiewicz
+        <span> by Rafal Szczepankiewicz</span>
       </div>
     </div>
     <article className="article__body">
@@ -35,9 +34,7 @@ by Rafal Szczepankiewicz
           {article.teaser}
         </p>
         <Link className="active" to={`/blog/${article.slug.current}`}>
-          Read more
-          {' '}
-          <span className="right-arrow">&#xbb;</span>
+          <span>Read more &#xbb</span>
         </Link>
       </div>
     </article>

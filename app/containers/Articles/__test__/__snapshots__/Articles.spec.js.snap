@@ -30,17 +30,7 @@ exports[`<Articles /> should render <Articles /> 1`] = `
       <div>
         <AboutAuthor />
         <GetInTouch />
-        <TrendingArticles
-          articles={
-            Array [
-              Object {
-                "slug": Object {
-                  "current": "test-article",
-                },
-              },
-            ]
-          }
-        />
+        <LoadableComponent />
       </div>
     </div>
   </div>

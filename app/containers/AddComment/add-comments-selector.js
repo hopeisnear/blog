@@ -14,4 +14,4 @@ const selectArticle = () => createSelector(
   (articles, articleName) => articles.find(article => article.slug.current === articleName && article.content !== undefined)
 );
 
-export { selectArticle, selectArticleName };
+export { selectArticle };
