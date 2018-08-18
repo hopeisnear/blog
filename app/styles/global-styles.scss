@@ -76,7 +76,7 @@ pre {
 
 blockquote {
   font-style:normal;
-  font-family:"Segoe Print", "Times New Roman", Verdana;
+  font-family: $logo-font;
 }
 
 input::placeholder, textarea::placeholder {

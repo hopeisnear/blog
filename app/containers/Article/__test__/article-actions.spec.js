@@ -1,7 +1,7 @@
 import { stub, assert } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as articleService from 'services/article-service';
-import * as articleSelector from 'containers/Blog/Article/article-selector';
+import * as articleSelector from 'containers/Article/article-selector';
 import { FETCH_ARTICLE_RESPONDED, fetchArticleAction } from '../article-actions';
 
 describe('article-actions', () => {

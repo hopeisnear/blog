@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { shape } from 'prop-types';
-import AddComment from 'containers/Blog/AddComment';
+import AddComment from 'containers/AddComment/Loadable';
 import moment from 'moment';
 import './Comment.scss';
 

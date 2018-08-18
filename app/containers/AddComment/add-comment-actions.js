@@ -3,9 +3,8 @@ import {
   appendComment, addNewComment, addNewReply, appendReply
 } from 'services/comments-service';
 import moment from 'moment';
-import { selectArticle } from 'containers/Blog/Article/article-selector';
-
-export const ADD_COMMENT_RESPONDED = 'ADD_COMMENT_RESPONDED';
+import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
+import { selectArticle } from './add-comments-selector';
 
 export function addCommentAction(comment, commentForm) {
   return (dispatch, getState) => {

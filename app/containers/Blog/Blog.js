@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Articles from 'containers/Blog/Articles/Loadable';
-import Article from 'containers/Blog/Article/Loadable';
+import Articles from 'containers/Articles/Loadable';
+import Article from 'containers/Article/Loadable';
 
 import './Blog.scss';
 

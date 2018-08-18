@@ -1,8 +1,8 @@
 import { Map } from 'immutable';
 import blogReducer from '../blog-reducer';
-import { FETCH_ARTICLES_RESPONDED } from '../Articles/articles-actions';
-import { FETCH_ARTICLE_RESPONDED } from '../Article/article-actions';
-import { ADD_COMMENT_RESPONDED } from '../AddComment/add-comment-actions';
+import { FETCH_ARTICLES_RESPONDED } from '../../Articles/articles-actions';
+import { FETCH_ARTICLE_RESPONDED } from '../../Article/article-actions';
+import { ADD_COMMENT_RESPONDED } from '../../AddComment/add-comment-actions';
 
 describe('blog-reducer', () => {
   test('should validate FETCH_ARTICLES_RESPONDED', () => {

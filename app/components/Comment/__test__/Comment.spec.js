@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddComment from 'containers/Blog/AddComment';
+import AddComment from 'containers/AddComment';
 
 import Comment from '../Comment';
 

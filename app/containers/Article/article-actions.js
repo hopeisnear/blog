@@ -1,7 +1,6 @@
 import { fetchArticle } from 'services/article-service';
+import { FETCH_ARTICLE_RESPONDED } from 'common/article-actions';
 import { selectArticleName } from './article-selector';
-
-export const FETCH_ARTICLE_RESPONDED = 'FETCH_ARTICLE_RESPONDED';
 
 export function fetchArticleAction() {
   return (dispatch, getState) => fetchArticle(selectArticleName()(getState()))

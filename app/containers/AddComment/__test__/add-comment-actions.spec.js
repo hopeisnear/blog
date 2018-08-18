@@ -1,7 +1,7 @@
 import { stub } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as commentsService from 'services/comments-service';
-import * as articleSelector from 'containers/Blog/Article/article-selector';
+import * as articleSelector from 'containers/Article/article-selector';
 import { ADD_COMMENT_RESPONDED, addCommentAction } from '../add-comment-actions';
 
 jest.mock('moment', () => ({ utc: () => ({ format: () => '2018–01–30T12:34:56+00:00' }) }));

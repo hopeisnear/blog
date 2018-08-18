@@ -1,6 +1,5 @@
 import { fetchArticles } from 'services/article-service';
-
-export const FETCH_ARTICLES_RESPONDED = 'FETCH_ARTICLES_RESPONDED';
+import { FETCH_ARTICLES_RESPONDED } from 'common/article-actions';
 
 export function fetchArticlesAction() {
   return dispatch => fetchArticles()
