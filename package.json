@@ -19,7 +19,7 @@
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_ENV=development node server",
     "start:production": "npm run test && npm run build && npm run start:prod",
-    "start:prod": "node server",
+    "start:prod": "cross-env NODE_ENV=production node server",
     "clean": "npm run test:clean && npm run build:clean",
     "lint": "eslint ./app --quiet --cache",
     "lint:fix": "eslint ./app --fix --cache",
@@ -57,6 +57,7 @@
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "reselect": "3.0.1",
+    "spdy": "^3.4.7",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
@@ -76,6 +77,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chalk": "^2.3.2",
     "circular-dependency-plugin": "^5.0.2",
+    "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.1.4",
     "css-loader": "^1.0.0",
     "empty-module": "^0.0.2",
@@ -107,10 +109,12 @@
     "sass-loader": "^7.0.3",
     "sinon": "^6.1.5",
     "style-loader": "^0.22.1",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.1.2",
-    "webpack-hot-middleware": "^2.21.2"
+    "webpack-hot-middleware": "^2.21.2",
+    "webpack-manifest-plugin": "^2.0.3"
   }
 }

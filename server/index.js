@@ -1,7 +1,10 @@
 /* eslint consistent-return:0 */
 
+const http = require('http');
 const express = require('express');
 const { resolve } = require('path');
+const spdy = require('spdy');
+const fs = require('fs');
 const logger = require('./util//logger');
 
 const argv = require('./util/argv');
@@ -21,13 +24,24 @@ setup(app, {
 
 // get the intended host and port number, use localhost and port 3000 if not provided
 const customHost = argv.host || process.env.HOST;
-const host = customHost || null; // Let http.Server use its default IPv6/4 host
 const prettyHost = customHost || 'localhost';
 
-// Start your app.
-app.listen(port, host, (err) => {
-  if (err) {
-    return logger.error(err.message);
-  }
-  logger.appStarted(port, prettyHost);
-});
+const options = {
+  key: fs.readFileSync(`${__dirname}/server.key`),
+  cert: fs.readFileSync(`${__dirname}/server.crt`)
+};
+
+spdy
+  .createServer(options, app)
+  .listen(port, (error) => {
+    if (error) {
+      console.error(error);
+      return process.exit(1);
+    }
+    logger.appStarted(port, prettyHost);
+  });
+
+http.createServer((req, res) => {
+  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
+  res.end();
+}).listen(80);

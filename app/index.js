@@ -7,6 +7,8 @@ import { Map } from 'immutable';
 import 'styles/theme.scss';
 import App from './App';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import configureStore from './configureStore';
 import { LOCATION_CHANGED } from './reducers';
 
@@ -42,3 +44,5 @@ if (module.hot) {
 }
 
 render();
+
+registerServiceWorker();
