@@ -16,6 +16,26 @@ exports[`<AddComment /> should render <AddComment /> 1`] = `
       placeholder="Enter your comments here"
       required={true}
     />
+    <VelocityTransitionGroup
+      duration={1500}
+      enter={
+        Object {
+          "animation": "slideDown",
+        }
+      }
+      enterHideStyle={
+        Object {
+          "display": "none",
+        }
+      }
+      enterShowStyle={
+        Object {
+          "display": "",
+        }
+      }
+      leave={null}
+      runOnMount={false}
+    />
   </form>
 </div>
 `;
