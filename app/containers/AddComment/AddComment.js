@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { PureComponent } from 'react';
 import { func, shape } from 'prop-types';
+import { VelocityTransitionGroup } from 'velocity-react';
 
 import './AddComment.scss';
 
@@ -13,6 +14,12 @@ export default class AddComment extends PureComponent {
     name: undefined,
     website: undefined
   };
+
+  constructor(props) {
+    super(props);
+    this.myParentRef = React.createRef();
+    this.myRef = React.createRef();
+  }
 
   expandCommentDetails = () => {
     this.setState({ showCommentExpandableSection: true });
@@ -38,7 +45,7 @@ export default class AddComment extends PureComponent {
     const { content, showCommentExpandableSection, email, name, website } = this.state;
 
     return (
-      <div className="AddComment">
+      <div ref={this.myParentRef} className="AddComment">
         <form onSubmit={this.handleSubmit}>
           <textarea
             className="add-comment__input"
@@ -50,28 +57,30 @@ export default class AddComment extends PureComponent {
             onChange={this.handleInputChange}
             onFocus={this.expandCommentDetails}
           />
-          {showCommentExpandableSection && (
-            <div className="add-comment__expandable-section">
-              <div>
-                <label className="sticky">
-                  <input name="email" type="email" size="30" required maxLength="100" value={email} onChange={this.handleInputChange} />
-                  <label htmlFor="email">Email</label>
-                </label>
+          <VelocityTransitionGroup enter={{ animation: 'slideDown' }} duration={1500}>
+            { showCommentExpandableSection && (
+              <div className="add-comment__expandable-section">
+                <div>
+                  <label className="sticky">
+                    <input name="email" type="email" size="30" required maxLength="100" value={email} onChange={this.handleInputChange} />
+                    <label htmlFor="email">Email</label>
+                  </label>
+                </div>
+                <div>
+                  <label className="sticky">
+                    <input name="name" type="text" size="30" required maxLength="100" value={name} onChange={this.handleInputChange} />
+                    <label htmlFor="name">Name</label>
+                  </label>
+                </div>
+                <div ref={this.myRef}>
+                  <label className="sticky">
+                    <input name="website" type="url" size="30" maxLength="200" value={website} onChange={this.handleInputChange} />
+                    <label htmlFor="website">Website (optional)</label>
+                  </label>
+                </div>
               </div>
-              <div>
-                <label className="sticky">
-                  <input name="name" type="text" size="30" required maxLength="100" value={name} onChange={this.handleInputChange} />
-                  <label htmlFor="name">Name</label>
-                </label>
-              </div>
-              <div>
-                <label className="sticky">
-                  <input name="website" type="url" size="30" maxLength="200" value={website} onChange={this.handleInputChange} />
-                  <label htmlFor="website">Website (optional)</label>
-                </label>
-              </div>
-            </div>
-          )}
+            )}
+          </VelocityTransitionGroup>
           {showCommentExpandableSection && (
             <div className="add-comment__form-submit">
               <input name="submit" type="submit" className="form-submit__input" value="Post Comment" />
