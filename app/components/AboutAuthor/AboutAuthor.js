@@ -6,12 +6,13 @@ const AboutAuthor = () => (
     <div className="header">
       About the author
     </div>
-    <div className="photo" />
+
     <div className="content">
       <strong>Rafal Szczepankiewicz</strong>
       <p className="content-description">
-        I am an experienced software developer living in Poland, Cracow.
-        I’m passionate about modern web applications that are built to deliver great user and developer experiences.
+        Web applications architect specialized in Java with more than 10 years of experience.
+        Focused on designing and implementing software that is loved by developers and end users.
+        Passionate about software best practices and paragliding.
       </p>
     </div>
   </div>

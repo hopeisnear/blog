@@ -28,6 +28,7 @@ exports[`<Article /> should render <Article /> 1`] = `
       }
     />
   </div>
+  <ShareArticle />
   <Comments
     comments={Array []}
     commentsCount={2}

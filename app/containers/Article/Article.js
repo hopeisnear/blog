@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import { func, string, shape } from 'prop-types';
 import { Helmet } from 'react-helmet';
-import ArticleContent from 'components/ArticleContent/index';
+import ArticleContent from 'components/ArticleContent';
+import ShareArticle from 'components/ShareArticle';
 import Comments from 'components/Comments/index';
 import AddComment from 'containers/AddComment/Loadable';
 
@@ -28,6 +29,7 @@ export default class Article extends PureComponent {
         <div className="article__content">
           {article && <ArticleContent article={article} />}
         </div>
+        <ShareArticle />
         {article && article.comments && <Comments comments={article.comments} commentsCount={article.commentsCount} />}
         <h3 className="article__reply_header">Leave a Reply</h3>
         <AddComment />

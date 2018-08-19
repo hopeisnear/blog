@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
+<div
+  className="ShareArticle"
+>
+  <h2
+    className="share-article__title"
+  >
+    Share
+  </h2>
+  <ul
+    className="share-article__list"
+  >
+    <li
+      className="share-article__item"
+      title="Share on Facebook"
+    >
+      <CreatedButton
+        url="www.test.com"
+        windowHeight={400}
+        windowWidth={550}
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+    <li
+      className="share-article__item"
+      title="Share on Google+"
+    >
+      <CreatedButton
+        url="www.test.com"
+        windowHeight={400}
+        windowWidth={550}
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+    <li
+      className="share-article__item"
+      title="Share on LinkedIn"
+    >
+      <CreatedButton
+        url="www.test.com"
+        windowHeight={600}
+        windowWidth={750}
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+    <li
+      className="share-article__item"
+      title="Share on Twitter"
+    >
+      <CreatedButton
+        url="www.test.com"
+        windowHeight={400}
+        windowWidth={550}
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+    <li
+      className="share-article__item"
+      title="Share on Reddit"
+    >
+      <CreatedButton
+        url="www.test.com"
+        windowHeight={460}
+        windowWidth={660}
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+    <li
+      className="share-article__item"
+      title="Share via Email"
+    >
+      <CreatedButton
+        onClick={[Function]}
+        openWindow={false}
+        url="www.test.com"
+      >
+        <Icon
+          className=""
+          iconBgStyle={Object {}}
+          logoFillColor="white"
+          size={40}
+        />
+      </CreatedButton>
+    </li>
+  </ul>
+</div>
+`;
