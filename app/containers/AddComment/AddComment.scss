@@ -10,6 +10,36 @@
     width: 100%;
     box-sizing: border-box;
   }
+  .add-comment__login {
+    display: flex;
+    justify-content: space-between;
+    background: #F5F5F5;
+    padding: 10px;
+    .login__options {
+      align-self: center;
+    }
+  }
+  .add-comment__loggedIn {
+    display: flex;
+    justify-content: flex-end;
+    background: #F5F5F5;
+    padding: 10px;
+    .login__options {
+      align-self: center;
+    }
+    font-size: $secondary-font-size;
+    .loggedIn__avatar, .loggedIn__commentingAs, .loggedIn__username {
+      margin-right: 5px;
+      align-self: center;
+    }
+    .loggedIn__icon {
+      margin-right: 20px;
+      align-self: center;
+    }
+    .loggedIn__logout {
+      align-self: center;
+    }
+  }
   .add-comment__expandable-section {
     padding: 0 20px 20px 20px;
     background: #F5F5F5;
@@ -60,6 +90,7 @@
     padding: 20px;
     display: flex;
     justify-content: flex-end;
+    text-align: right;
     background: #F0F0F0;
     &.expandable-section--collapsed {
       display: none;

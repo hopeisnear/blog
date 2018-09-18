@@ -8,6 +8,7 @@ import 'styles/theme.scss';
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
+import { initFacebook } from './facebook-provider';
 
 import configureStore from './configureStore';
 import { LOCATION_CHANGED } from './reducers';
@@ -45,4 +46,5 @@ if (module.hot) {
 
 render();
 
-registerServiceWorker();
+// registerServiceWorker();
+initFacebook(store);

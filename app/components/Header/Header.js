@@ -8,10 +8,12 @@ export default function Header() {
     <header className="Header">
       <div className="header__top">
         <div className="header__logo">
-          <Link to="/">&lt; GOOD Developer &gt;</Link>
+          <Link to="/">
+            <div>&lt; GOOD developer &gt;</div>
+          </Link>
         </div>
-        <div>
-          <blockquote className="header__quote">
+        <div className="header__quote">
+          <blockquote className="quote">
             Adapt what is useful, reject what is useless, and add what is specifically your own.
           </blockquote>
         </div>

@@ -4,6 +4,7 @@ import {
 } from 'services/comments-service';
 import moment from 'moment';
 import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
+import { USER_LOGGED_OUT } from 'common/login-actions';
 import { selectArticle } from './add-comments-selector';
 
 export function addCommentAction(comment, commentForm) {
@@ -45,4 +46,12 @@ function commentHaveReplies(searchKey, comment) {
     }
     return commentHaveReplies(searchKey, reply);
   });
+}
+
+export function logout() {
+  return (dispatch) => {
+    FB.logout(() => {
+      dispatch({ type: USER_LOGGED_OUT });
+    });
+  };
 }
