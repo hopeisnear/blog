@@ -22,22 +22,7 @@ module.exports = {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            babelrc: false,
-            presets: [
-              ['env', {
-                targets: {
-                  browsers: ['last 1 Chrome versions']
-                },
-                modules: false
-              }],
-              'react',
-              'stage-0'
-            ],
-            cacheDirectory: path.join(__dirname, 'tmp', 'babel-loader-cache'),
-            compact: true
-          }
+          loader: 'babel-loader'
         }
       },
       {
