@@ -11,14 +11,13 @@ describe('article-actions', () => {
     stub(articleService, 'fetchArticle').returns(Promise.resolve('article'));
     const store = createStoreMock();
 
-    return store.dispatch(fetchArticleAction('Test article'))
-      .then(() => {
-        const [fetchArticleResponded] = store.getActions();
+    return store.dispatch(fetchArticleAction('Test article')).then(() => {
+      const [fetchArticleResponded] = store.getActions();
 
-        expect(fetchArticleResponded.type).toBe(FETCH_ARTICLE_RESPONDED);
-        expect(fetchArticleResponded.article).toBe('article');
-        assert.calledWithExactly(articleService.fetchArticle, 'test-article');
-      });
+      expect(fetchArticleResponded.type).toBe(FETCH_ARTICLE_RESPONDED);
+      expect(fetchArticleResponded.article).toBe('article');
+      assert.calledWithExactly(articleService.fetchArticle, 'test-article');
+    });
   });
 
   afterEach(() => {

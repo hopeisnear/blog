@@ -21,13 +21,13 @@ export default class AddComment extends PureComponent {
     this.setState({ showCommentExpandableSection: true });
   };
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
 
     const { addComment, comment, onAddComment } = this.props;
@@ -42,7 +42,9 @@ export default class AddComment extends PureComponent {
       <React.Fragment>
         <div className="add-comment__login">
           <div>Fill in your details below or click an icon to log in:</div>
-          <div className="login__options"><Login /></div>
+          <div className="login__options">
+            <Login />
+          </div>
         </div>
         <div className="add-comment__expandable-section">
           <div>
@@ -71,11 +73,21 @@ export default class AddComment extends PureComponent {
   renderLoggedInPanel() {
     return (
       <div className="add-comment__loggedIn">
-        <div className="loggedIn__avatar"><img alt="user avatar" width={30} height={30} src={this.props.user.picture} /></div>
+        <div className="loggedIn__avatar">
+          <img alt="user avatar" width={30} height={30} src={this.props.user.picture} />
+        </div>
         <div className="loggedIn__commentingAs">Commenting as</div>
-        <div className="loggedIn__username"><strong>{this.props.user.name}</strong></div>
-        <div className="loggedIn__icon"><FacebookIcon size={25} /></div>
-        <div className="loggedIn__logout"><button type="button" className="button secondary small" onClick={this.props.logout}>Logout</button></div>
+        <div className="loggedIn__username">
+          <strong>{this.props.user.name}</strong>
+        </div>
+        <div className="loggedIn__icon">
+          <FacebookIcon size={25} />
+        </div>
+        <div className="loggedIn__logout">
+          <button type="button" className="button secondary small" onClick={this.props.logout}>
+            Logout
+          </button>
+        </div>
       </div>
     );
   }
@@ -83,8 +95,8 @@ export default class AddComment extends PureComponent {
   renderExpandableSection() {
     return (
       <div>
-        { this.props.loggedIn && this.renderLoggedInPanel() }
-        { !this.props.loggedIn && this.renderLoggedOutPanel() }
+        {this.props.loggedIn && this.renderLoggedInPanel()}
+        {!this.props.loggedIn && this.renderLoggedOutPanel()}
       </div>
     );
   }
@@ -106,7 +118,7 @@ export default class AddComment extends PureComponent {
             onFocus={this.expandCommentDetails}
           />
           <VelocityTransitionGroup enter={{ animation: 'slideDown' }} duration={1500}>
-            { showCommentExpandableSection && this.renderExpandableSection() }
+            {showCommentExpandableSection && this.renderExpandableSection()}
             {showCommentExpandableSection && (
               <div className="add-comment__form-submit">
                 <input name="submit" type="submit" className="form-submit__input" value="Post Comment" />

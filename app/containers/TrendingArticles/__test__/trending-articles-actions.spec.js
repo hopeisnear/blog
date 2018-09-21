@@ -9,13 +9,12 @@ describe('trending-articles-actions', () => {
     stub(articleService, 'fetchTrendingArticles').returns(Promise.resolve([{ _id: '1' }]));
     const store = createStoreMock();
 
-    return store.dispatch(fetchTrendingArticlesAction())
-      .then(() => {
-        const [fetchTrendingArticlesResponded] = store.getActions();
+    return store.dispatch(fetchTrendingArticlesAction()).then(() => {
+      const [fetchTrendingArticlesResponded] = store.getActions();
 
-        expect(fetchTrendingArticlesResponded.type).toBe(FETCH_TRENDING_ARTICLES_RESPONDED);
-        expect(fetchTrendingArticlesResponded.trendingArticles).toEqual([{ _id: '1' }]);
-      });
+      expect(fetchTrendingArticlesResponded.type).toBe(FETCH_TRENDING_ARTICLES_RESPONDED);
+      expect(fetchTrendingArticlesResponded.trendingArticles).toEqual([{ _id: '1' }]);
+    });
   });
 
   afterEach(() => {

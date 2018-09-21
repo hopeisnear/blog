@@ -7,9 +7,11 @@ export default function Footer() {
     <footer className="Footer">
       <section>
         <div className="footer__note">
-          <span>© Rafal Szczepankiewicz 2018.  All code examples are licensed under </span>
+          <span>© Rafal Szczepankiewicz 2018. All code examples are licensed under </span>
           <span>
-            <a href="http://opensource.org/licenses/MIT" rel="nofollow">MIT</a>
+            <a href="http://opensource.org/licenses/MIT" rel="nofollow">
+              MIT
+            </a>
           </span>
         </div>
       </section>

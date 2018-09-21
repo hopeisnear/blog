@@ -1,7 +1,7 @@
 import { USER_LOGGED_IN } from './common/login-actions';
 
 export function initFacebook(store) {
-  window.fbAsyncInit = function () {
+  window.fbAsyncInit = function asyncInitSdk() {
     FB.init({
       appId: '2085805548104423',
       cookie: true,
@@ -14,7 +14,7 @@ export function initFacebook(store) {
 
     FB.Event.subscribe('auth.statusChange', ({ status }) => {
       if (status === 'connected') {
-        FB.api('/me', { fields: ['email', 'name', 'picture'] }, (response) => {
+        FB.api('/me', { fields: ['email', 'name', 'picture'] }, response => {
           store.dispatch({
             type: USER_LOGGED_IN,
             user: { name: response.name, email: response.email, picture: response.picture.data.url, loginProvider: 'facebook' }
@@ -24,7 +24,7 @@ export function initFacebook(store) {
     });
   };
 
-  (function (d, s, id) {
+  (function initSdk(d, s, id) {
     const fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {
       return;
@@ -33,5 +33,5 @@ export function initFacebook(store) {
     js.id = id;
     js.src = 'https://connect.facebook.net/en_US/sdk.js';
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+  })(document, 'script', 'facebook-jssdk');
 }

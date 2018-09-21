@@ -21,14 +21,9 @@ export default class Article extends PureComponent {
       <div className="Article">
         <Helmet>
           <title>Article details</title>
-          <meta
-            name="description"
-            content={`Article ${articleName} content`}
-          />
+          <meta name="description" content={`Article ${articleName} content`} />
         </Helmet>
-        <div className="article__content">
-          {article && <ArticleContent article={article} />}
-        </div>
+        <div className="article__content">{article && <ArticleContent article={article} />}</div>
         <ShareArticle />
         {article && article.comments && <Comments comments={article.comments} commentsCount={article.commentsCount} />}
         <h3 className="article__reply_header">Leave a Reply</h3>

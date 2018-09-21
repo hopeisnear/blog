@@ -28,16 +28,18 @@ describe('<TrendingArticles />', () => {
   function createProps() {
     return {
       fetchTrendingArticles: spy(),
-      trendingArticles: [{
-        slug: { current: 'article-1' },
-        title: 'article-1-title',
-        image: 'image1'
-      },
-      {
-        slug: { current: 'article-2' },
-        title: 'article-2-title',
-        image: 'image2'
-      }]
+      trendingArticles: [
+        {
+          slug: { current: 'article-1' },
+          title: 'article-1-title',
+          image: 'image1'
+        },
+        {
+          slug: { current: 'article-2' },
+          title: 'article-2-title',
+          image: 'image2'
+        }
+      ]
     };
   }
 });

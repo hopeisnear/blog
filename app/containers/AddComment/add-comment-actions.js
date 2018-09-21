@@ -1,7 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import {
-  appendComment, addNewComment, addNewReply, appendReply
-} from 'services/comments-service';
+import { appendComment, addNewComment, addNewReply, appendReply } from 'services/comments-service';
 import moment from 'moment';
 import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
 import { USER_LOGGED_OUT } from 'common/login-actions';
@@ -13,43 +11,43 @@ export function addCommentAction(comment, commentForm) {
 
     if (!comment) {
       if (!selectedArticle.comments) {
-        return addNewComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() })
-          .then((response) => {
-            dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-          });
+        return addNewComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() }).then(response => {
+          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+        });
       }
-      return appendComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() })
-        .then((response) => {
-          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-        });
-    }
-
-    const commentHaveReply = selectedArticle.comments
-      .some(selectedArticleComment => (selectedArticleComment._key === comment._key ? selectedArticleComment.replies !== undefined : commentHaveReplies(comment._key, selectedArticleComment)));
-    if (!commentHaveReply) {
-      return addNewReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() })
-        .then((response) => {
-          dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
-        });
-    }
-    return appendReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() })
-      .then((response) => {
+      return appendComment(selectedArticle._id, { ...commentForm, createdAt: moment.utc().format() }).then(response => {
         dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
       });
+    }
+
+    const commentHaveReply = selectedArticle.comments.some(
+      selectedArticleComment => (selectedArticleComment._key === comment._key ? selectedArticleComment.replies !== undefined : commentHaveReplies(comment._key, selectedArticleComment))
+    );
+    if (!commentHaveReply) {
+      return addNewReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() }).then(response => {
+        dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+      });
+    }
+    return appendReply(selectedArticle._id, comment._key, { ...commentForm, createdAt: moment.utc().format() }).then(response => {
+      dispatch({ type: ADD_COMMENT_RESPONDED, updatedArticle: response });
+    });
   };
 }
 
 function commentHaveReplies(searchKey, comment) {
-  return comment.replies && comment.replies.some((reply) => {
-    if (reply._key === searchKey) {
-      return reply.replies !== undefined;
-    }
-    return commentHaveReplies(searchKey, reply);
-  });
+  return (
+    comment.replies &&
+    comment.replies.some(reply => {
+      if (reply._key === searchKey) {
+        return reply.replies !== undefined;
+      }
+      return commentHaveReplies(searchKey, reply);
+    })
+  );
 }
 
 export function logout() {
-  return (dispatch) => {
+  return dispatch => {
     FB.logout(() => {
       dispatch({ type: USER_LOGGED_OUT });
     });

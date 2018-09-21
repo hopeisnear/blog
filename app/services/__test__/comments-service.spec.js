@@ -49,7 +49,6 @@ describe('comments-service', () => {
     expect(comment).toBe('new appended reply');
   });
 
-
   afterEach(() => {
     sanityProvider.patch.restore();
   });

@@ -34,19 +34,17 @@ export default class Comment extends PureComponent {
           </div>
           <div className="comment__timestamp">
             <a disabled href="http://TODO/#comment-43756">
-              <time dateTime={comment.createdAt}>
-                {moment(comment.createdAt).format('LL')}
-              </time>
+              <time dateTime={comment.createdAt}>{moment(comment.createdAt).format('LL')}</time>
             </a>
           </div>
         </footer>
         <div className="comment__body">
-          <p className="comment__content">
-            {comment.content}
-          </p>
+          <p className="comment__content">{comment.content}</p>
         </div>
         <div>
-          <button type="button" className="button comment__reply" onClick={this.showReplyForm}>reply</button>
+          <button type="button" className="button comment__reply" onClick={this.showReplyForm}>
+            reply
+          </button>
           {showReplyForm && <AddComment onAddComment={this.hideReplyForm} comment={comment} />}
         </div>
       </article>

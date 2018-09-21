@@ -19,7 +19,11 @@ export default class Articles extends PureComponent {
       <section className="articles">
         <div className="articles__layout">
           <div className="articles__list">
-            {articles.map(article => (<div key={article.slug.current}><ArticleHeading article={article} /></div>))}
+            {articles.map(article => (
+              <div key={article.slug.current}>
+                <ArticleHeading article={article} />
+              </div>
+            ))}
           </div>
           <div className="articles__sidebar">
             <div>

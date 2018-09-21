@@ -12,7 +12,10 @@ const ArticleHeading = ({ article }) => (
       <Link className="header-image__link" to={`/blog/${article.slug.current}`}>
         <img
           className="header-image"
-          src={imageUrlFor(article.image).ignoreImageParams().width(360).height(252)}
+          src={imageUrlFor(article.image)
+            .ignoreImageParams()
+            .width(360)
+            .height(252)}
           alt="article"
         />
       </Link>
@@ -30,9 +33,7 @@ const ArticleHeading = ({ article }) => (
     </div>
     <article className="article__body">
       <div>
-        <p>
-          {article.teaser}
-        </p>
+        <p>{article.teaser}</p>
         <Link className="active" to={`/blog/${article.slug.current}`}>
           <span>Read more &#xbb;</span>
         </Link>

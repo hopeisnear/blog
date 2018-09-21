@@ -13,7 +13,10 @@ const mapStateToProps = createStructuredSelector({
   trendingArticles: selectTrendingArticles()
 });
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default compose(withConnect)(TrendingArticles);
 export { mapDispatchToProps };

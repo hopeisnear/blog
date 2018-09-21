@@ -17,7 +17,7 @@ describe('article-service', () => {
     const articlePromise = fetchArticle('test-article');
 
     expect(sanity.fetch.args[0][0]).toContain('test-article');
-    return articlePromise.then((article) => {
+    return articlePromise.then(article => {
       expect(article.comments).toEqual([{ replies: [{ replies: [{}] }] }, {}]);
       expect(article.commentsCount).toBe(4);
     });

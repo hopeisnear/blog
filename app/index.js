@@ -7,6 +7,7 @@ import { Map } from 'immutable';
 import 'styles/theme.scss';
 import App from './App';
 
+// eslint-disable-next-line no-unused-vars
 import registerServiceWorker from './registerServiceWorker';
 import { initFacebook } from './facebook-provider';
 
@@ -30,7 +31,7 @@ const render = () => {
   );
 };
 
-history.listen((location) => {
+history.listen(location => {
   store.dispatch({
     type: LOCATION_CHANGED,
     location

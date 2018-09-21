@@ -15,13 +15,12 @@ describe('add-comment-actions', () => {
       .returns(Promise.resolve('added comment response'));
     const store = createStoreMock();
 
-    return store.dispatch(addCommentAction(undefined, { content: 'Test comment' }))
-      .then(() => {
-        const [addCommentResponded] = store.getActions();
+    return store.dispatch(addCommentAction(undefined, { content: 'Test comment' })).then(() => {
+      const [addCommentResponded] = store.getActions();
 
-        expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
-        expect(addCommentResponded.updatedArticle).toBe('added comment response');
-      });
+      expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
+      expect(addCommentResponded.updatedArticle).toBe('added comment response');
+    });
   });
 
   test('should append new comment', () => {
@@ -31,13 +30,12 @@ describe('add-comment-actions', () => {
       .returns(Promise.resolve('appended comment response'));
     const store = createStoreMock();
 
-    return store.dispatch(addCommentAction(undefined, { content: 'Test comment' }))
-      .then(() => {
-        const [addCommentResponded] = store.getActions();
+    return store.dispatch(addCommentAction(undefined, { content: 'Test comment' })).then(() => {
+      const [addCommentResponded] = store.getActions();
 
-        expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
-        expect(addCommentResponded.updatedArticle).toBe('appended comment response');
-      });
+      expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
+      expect(addCommentResponded.updatedArticle).toBe('appended comment response');
+    });
   });
 
   test('should add new reply', () => {
@@ -47,13 +45,12 @@ describe('add-comment-actions', () => {
       .returns(Promise.resolve('appended comment response'));
     const store = createStoreMock();
 
-    return store.dispatch(addCommentAction({ _key: '3' }, { content: 'Test comment' }))
-      .then(() => {
-        const [addCommentResponded] = store.getActions();
+    return store.dispatch(addCommentAction({ _key: '3' }, { content: 'Test comment' })).then(() => {
+      const [addCommentResponded] = store.getActions();
 
-        expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
-        expect(addCommentResponded.updatedArticle).toBe('appended comment response');
-      });
+      expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
+      expect(addCommentResponded.updatedArticle).toBe('appended comment response');
+    });
   });
 
   test('should append new reply', () => {
@@ -63,13 +60,12 @@ describe('add-comment-actions', () => {
       .returns(Promise.resolve('appended comment response'));
     const store = createStoreMock();
 
-    return store.dispatch(addCommentAction({ _key: '2' }, { content: 'Test comment' }))
-      .then(() => {
-        const [addCommentResponded] = store.getActions();
+    return store.dispatch(addCommentAction({ _key: '2' }, { content: 'Test comment' })).then(() => {
+      const [addCommentResponded] = store.getActions();
 
-        expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
-        expect(addCommentResponded.updatedArticle).toBe('appended comment response');
-      });
+      expect(addCommentResponded.type).toBe(ADD_COMMENT_RESPONDED);
+      expect(addCommentResponded.updatedArticle).toBe('appended comment response');
+    });
   });
 
   afterEach(() => {

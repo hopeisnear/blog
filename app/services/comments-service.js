@@ -15,7 +15,6 @@ export function addNewComment(documentId, comment) {
     .commit();
 }
 
-
 export function addNewReply(documentId, commentKey, comment) {
   return sanity
     .patch(documentId)

@@ -4,13 +4,13 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 
 import getInjectors from './reducerInjectors';
 
-export default ({ key, reducer }) => (WrappedComponent) => {
+export default ({ key, reducer }) => WrappedComponent => {
   class ReducerInjector extends React.Component {
     static contextTypes = {
       store: shape({}).isRequired
     };
 
-    static displayName = `withReducer(${(WrappedComponent.displayName || WrappedComponent.name || 'Component')})`;
+    static displayName = `withReducer(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
 
     injectors = getInjectors(this.context.store);
 

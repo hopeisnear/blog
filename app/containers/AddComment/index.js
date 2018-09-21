@@ -14,7 +14,10 @@ const mapStateToProps = createStructuredSelector({
   user: state => state.getIn(['login', 'user'])
 });
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default compose(withConnect)(AddComment);
 export { mapDispatchToProps };

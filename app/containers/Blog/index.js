@@ -9,9 +9,15 @@ const mapDispatchToProps = () => ({});
 
 const mapStateToProps = createStructuredSelector({});
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 const withReducer = injectReducer({ key: 'blog', reducer: blogReducer });
 
-export default compose(withReducer, withConnect)(Blog);
+export default compose(
+  withReducer,
+  withConnect
+)(Blog);
 export { mapDispatchToProps };

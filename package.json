@@ -34,7 +34,19 @@
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --cache --silent -i",
     "test:dev": "cross-env NODE_ENV=test jest --cache --watch",
-    "test:update": "cross-env NODE_ENV=test jest --cache -u -i"
+    "test:update": "cross-env NODE_ENV=test jest --cache -u -i",
+    "eslint-check": "eslint --print-config . | eslint-config-prettier-check"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
@@ -105,10 +117,12 @@
     "eslint": "5.6.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-import-resolver-webpack": "0.10.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-lodash": "3.1.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "7.11.1",
     "eventsource-polyfill": "0.9.6",
     "exports-loader": "0.7.0",
@@ -116,14 +130,16 @@
     "file-loader": "2.0.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
+    "husky": "^1.0.0-rc.14",
     "image-webpack-loader": "4.3.1",
     "imports-loader": "0.8.0",
     "ip": "1.1.5",
     "jest-cli": "21.2.0",
-    "lint-staged": "7.3.0",
+    "lint-staged": "^7.3.0",
     "minimist": "1.2.0",
     "node-sass": "4.9.3",
     "null-loader": "0.1.1",
+    "prettier": "^1.14.3",
     "react-test-renderer": "16.5.2",
     "redux-mock-store": "1.5.3",
     "rimraf": "2.6.2",

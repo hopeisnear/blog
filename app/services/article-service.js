@@ -36,15 +36,12 @@ export function fetchTrendingArticles() {
   return sanity.fetch(fetchTrendingArticlesQuery);
 }
 
-const countReplies = replies => replies
-  .filter(reply => reply.replies)
-  .reduce((memo, reply) => memo + reply.replies.length + countReplies(reply.replies), 0);
+const countReplies = replies => replies.filter(reply => reply.replies).reduce((memo, reply) => memo + reply.replies.length + countReplies(reply.replies), 0);
 
 export function fetchArticle(articleSlug) {
-  return sanity.fetch(fetchArticleQuery(articleSlug))
-    .then((response) => {
-      const [article] = response;
-      const commentsCount = article.comments.length + countReplies(article.comments);
-      return { ...article, commentsCount };
-    });
+  return sanity.fetch(fetchArticleQuery(articleSlug)).then(response => {
+    const [article] = response;
+    const commentsCount = article.comments.length + countReplies(article.comments);
+    return { ...article, commentsCount };
+  });
 }

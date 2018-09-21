@@ -31,9 +31,16 @@ describe('<AddComment />', () => {
     addCommentComponent.find('form').simulate('submit', { preventDefault: () => {} });
 
     expect(addCommentComponent.instance().state.showCommentExpandableSection).toBe(false);
-    assert.calledWithExactly(addCommentComponent.instance().props.addComment, { comment: '' }, {
-      content: 'test comment', name: 'John Smith', email: 'aaa@aa.com', website: 'http://website.com'
-    });
+    assert.calledWithExactly(
+      addCommentComponent.instance().props.addComment,
+      { comment: '' },
+      {
+        content: 'test comment',
+        name: 'John Smith',
+        email: 'aaa@aa.com',
+        website: 'http://website.com'
+      }
+    );
   });
 
   function createProps() {

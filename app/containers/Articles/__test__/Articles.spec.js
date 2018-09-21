@@ -20,11 +20,13 @@ describe('<Articles />', () => {
   function createProps() {
     return {
       articleName: 'Test article',
-      articles: [{
-        slug: {
-          current: 'test-article'
+      articles: [
+        {
+          slug: {
+            current: 'test-article'
+          }
         }
-      }],
+      ],
       fetchArticles: spy()
     };
   }

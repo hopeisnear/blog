@@ -15,7 +15,10 @@ const mapStateToProps = createStructuredSelector({
   articleName: selectArticleName()
 });
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default compose(withConnect)(Article);
 export { mapDispatchToProps };

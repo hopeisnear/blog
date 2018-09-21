@@ -3,15 +3,9 @@ import thunk from 'redux-thunk';
 import createReducer from './reducers';
 
 export default function configureStore(initialState) {
-  const enhancers = [
-    applyMiddleware(thunk)
-  ];
+  const enhancers = [applyMiddleware(thunk)];
 
-  const store = createStore(
-    createReducer(),
-    initialState,
-    compose(...enhancers)
-  );
+  const store = createStore(createReducer(), initialState, compose(...enhancers));
 
   store.injectedReducers = {};
 

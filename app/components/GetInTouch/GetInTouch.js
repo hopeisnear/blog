@@ -4,9 +4,7 @@ import './GetInTouch.scss';
 
 const GetInTouch = () => (
   <div className="GetInTouch">
-    <div className="get-in-touch__header">
-      Get in touch
-    </div>
+    <div className="get-in-touch__header">Get in touch</div>
     <div className="get-in-touch__body">
       <ul className="body__icons">
         <li className="body__icon">

@@ -9,13 +9,12 @@ describe('articles-actions', () => {
     stub(articleService, 'fetchArticles').returns(Promise.resolve([{ _id: '1' }]));
     const store = createStoreMock();
 
-    return store.dispatch(fetchArticlesAction())
-      .then(() => {
-        const [fetchArticlesResponded] = store.getActions();
+    return store.dispatch(fetchArticlesAction()).then(() => {
+      const [fetchArticlesResponded] = store.getActions();
 
-        expect(fetchArticlesResponded.type).toBe(FETCH_ARTICLES_RESPONDED);
-        expect(fetchArticlesResponded.articles).toEqual([{ _id: '1' }]);
-      });
+      expect(fetchArticlesResponded.type).toBe(FETCH_ARTICLES_RESPONDED);
+      expect(fetchArticlesResponded.articles).toEqual([{ _id: '1' }]);
+    });
   });
 
   afterEach(() => {
