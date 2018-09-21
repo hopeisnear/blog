@@ -13,9 +13,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__quote">
-          <blockquote className="quote">
-            Adapt what is useful, reject what is useless, and add what is specifically your own.
-          </blockquote>
+          <blockquote className="quote">Adapt what is useful, reject what is useless, and add what is specifically your own.</blockquote>
         </div>
       </div>
     </header>
