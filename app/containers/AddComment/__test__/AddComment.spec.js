@@ -39,7 +39,8 @@ describe('<AddComment />', () => {
   function createProps() {
     return {
       addComment: spy(),
-      comment: { comment: '' }
+      comment: { comment: '' },
+      logout: () => {}
     };
   }
 });

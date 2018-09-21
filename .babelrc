@@ -1,26 +1,40 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "modules": false
       }
     ],
-    "react",
-    "stage-0"
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    // Stage 0
+    "@babel/plugin-proposal-function-bind",
+    // Stage 1
+    "@babel/plugin-proposal-export-default-from",
+    // Stage 2
+    "@babel/plugin-proposal-export-namespace-from",
+    // Stage 3
+    "@babel/plugin-syntax-dynamic-import",
+    ["@babel/plugin-proposal-class-properties", { "loose": false }]
   ],
   "env": {
     "production": {
       "only": ["app"],
       "plugins": [
-        "transform-react-remove-prop-types",
-        "transform-react-constant-elements",
-        "transform-react-inline-elements",
+        // OTHER
+        ["transform-react-remove-prop-types", {
+          "removeImport": true,
+          "additionalLibraries": ["react-immutable-proptypes"]
+        }],
+        "@babel/transform-react-constant-elements",
+        "@babel/transform-react-inline-elements",
         "lodash"
       ]
     },
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
+      "plugins": ["@babel/plugin-transform-modules-commonjs", "dynamic-import-node"]
     }
   }
 }

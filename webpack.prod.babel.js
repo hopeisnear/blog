@@ -24,18 +24,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            babelrc: false,
-            presets: [
-              ['env', {
-                targets: {
-                  browsers: ['last 2 major versions', 'not ie < 11']
-                },
-                modules: false
-              }],
-              'react',
-              'stage-0'
-            ],
-            compact: true
+            presets: ['@babel/preset-env']
           }
         }
       },
