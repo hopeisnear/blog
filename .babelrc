@@ -24,10 +24,10 @@
       "only": ["app"],
       "plugins": [
         // OTHER
-//        ["transform-react-remove-prop-types", {
-//          "mode": "wrap",
-//          "ignoreFilenames": ["node_modules"]
-//        }],
+        ["transform-react-remove-prop-types", {
+          "removeImport": true,
+          "additionalLibraries": ["react-immutable-proptypes"]
+        }],
         "@babel/transform-react-constant-elements",
         "@babel/transform-react-inline-elements",
         "lodash"
