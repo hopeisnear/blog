@@ -2,7 +2,8 @@
 import { appendComment, addNewComment, addNewReply, appendReply } from 'services/comments-service';
 import moment from 'moment';
 import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
-import { USER_LOGGED_OUT } from 'common/login-actions';
+import { USER_LOGGED_OUT, USER_LOGIN_REQUESTED } from 'common/login-actions';
+import { LOGIN_PROVIDER_FACEBOOK, LOGIN_PROVIDER_GOOGLE } from 'constants/login-providers';
 import { selectArticle } from './add-comments-selector';
 
 export function addCommentAction(comment, commentForm) {
@@ -46,10 +47,30 @@ function commentHaveReplies(searchKey, comment) {
   );
 }
 
-export function logout() {
+export function login(loginProvider) {
   return dispatch => {
-    FB.logout(() => {
+    if (loginProvider === LOGIN_PROVIDER_FACEBOOK) {
+      FB.login(() => {}, { scope: 'public_profile,email' });
+      dispatch({ type: USER_LOGIN_REQUESTED });
+    }
+    if (loginProvider === LOGIN_PROVIDER_GOOGLE) {
+      gapi.auth2.getAuthInstance().signIn();
+      dispatch({ type: USER_LOGIN_REQUESTED });
+    }
+  };
+}
+
+export function logout() {
+  return (dispatch, getState) => {
+    const loginProvider = getState().getIn(['login', 'loginProvider']);
+    if (loginProvider === LOGIN_PROVIDER_FACEBOOK) {
+      FB.logout(() => {
+        dispatch({ type: USER_LOGGED_OUT });
+      });
+    }
+    if (loginProvider === LOGIN_PROVIDER_GOOGLE) {
+      gapi.auth2.getAuthInstance().signOut();
       dispatch({ type: USER_LOGGED_OUT });
-    });
+    }
   };
 }

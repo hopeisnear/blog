@@ -5,11 +5,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: [
-    'eventsource-polyfill',
-    'webpack-hot-middleware/client?reload=true',
-    './app/index'
-  ],
+  entry: ['eventsource-polyfill', 'webpack-hot-middleware/client?reload=true', './app/index'],
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: '/',
@@ -91,17 +87,8 @@ module.exports = {
   ],
   resolve: {
     modules: ['app', 'node_modules'],
-    extensions: [
-      '.js',
-      '.jsx',
-      '.scss',
-      '.react.js'
-    ],
-    mainFields: [
-      'browser',
-      'jsnext:main',
-      'main'
-    ]
+    extensions: ['.js', '.jsx', '.scss', '.react.js'],
+    mainFields: ['browser', 'jsnext:main', 'main']
   },
   devtool: 'eval-source-map',
   target: 'web',

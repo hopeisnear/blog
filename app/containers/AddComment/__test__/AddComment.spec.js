@@ -47,7 +47,8 @@ describe('<AddComment />', () => {
     return {
       addComment: spy(),
       comment: { comment: '' },
-      logout: () => {}
+      logout: () => {},
+      login: () => {}
     };
   }
 });

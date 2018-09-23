@@ -17,6 +17,11 @@
     padding: 10px;
     .login__options {
       align-self: center;
+      display: flex;
+      margin-left: -5px;
+      .login__option {
+        margin: 0 5px;
+      }
     }
   }
   .add-comment__loggedIn {

@@ -13,6 +13,7 @@ import { initFacebook } from './facebook-provider';
 
 import configureStore from './configureStore';
 import { LOCATION_CHANGED } from './reducers';
+import { initGooglePlus } from './google-plus-provider';
 
 const history = createHistory();
 const initialState = Map({ route: Map({ location: history.location }) });
@@ -49,3 +50,4 @@ render();
 
 // registerServiceWorker();
 initFacebook(store);
+initGooglePlus(store);

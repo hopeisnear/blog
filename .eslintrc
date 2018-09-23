@@ -25,7 +25,8 @@
     }
   },
   "globals": {
-    "FB": true
+    "FB": true,
+    "gapi": true
   },
   "rules": {
     "prettier/prettier": "error",

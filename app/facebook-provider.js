@@ -1,4 +1,5 @@
 import { USER_LOGGED_IN } from './common/login-actions';
+import { LOGIN_PROVIDER_FACEBOOK } from './constants/login-providers';
 
 export function initFacebook(store) {
   window.fbAsyncInit = function asyncInitSdk() {
@@ -17,7 +18,8 @@ export function initFacebook(store) {
         FB.api('/me', { fields: ['email', 'name', 'picture'] }, response => {
           store.dispatch({
             type: USER_LOGGED_IN,
-            user: { name: response.name, email: response.email, picture: response.picture.data.url, loginProvider: 'facebook' }
+            user: { name: response.name, email: response.email, picture: response.picture.data.url },
+            loginProvider: LOGIN_PROVIDER_FACEBOOK
           });
         });
       }

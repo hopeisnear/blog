@@ -7,9 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: [
-    path.join(process.cwd(), 'app/index.js')
-  ],
+  entry: [path.join(process.cwd(), 'app/index.js')],
   output: {
     path: path.resolve(process.cwd(), 'build'),
     publicPath: '/',
@@ -118,25 +116,14 @@ module.exports = {
       navigateFallback: '/index.html',
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     }),
-    new CopyWebpackPlugin([
-      { from: 'app/pwa' }
-    ])
+    new CopyWebpackPlugin([{ from: 'app/pwa' }])
   ],
   resolve: {
     modules: ['app', 'node_modules'],
-    extensions: [
-      '.js',
-      '.jsx',
-      '.scss',
-      '.react.js'
-    ],
-    mainFields: [
-      'browser',
-      'jsnext:main',
-      'main'
-    ]
+    extensions: ['.js', '.jsx', '.scss', '.react.js'],
+    mainFields: ['browser', 'jsnext:main', 'main']
   },
   performance: {
-    assetFilter: assetFilename => !(/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename))
+    assetFilter: assetFilename => !/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename)
   }
 };
