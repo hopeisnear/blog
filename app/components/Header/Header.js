@@ -9,7 +9,7 @@ export default function Header() {
       <div className="header__top">
         <div className="header__logo">
           <Link to="/">
-            <div>&lt; GOOD developer &gt;</div>
+            <div>&lt; GOOD dev &gt; - blog about programming best practices</div>
           </Link>
         </div>
         <div className="header__quote">
