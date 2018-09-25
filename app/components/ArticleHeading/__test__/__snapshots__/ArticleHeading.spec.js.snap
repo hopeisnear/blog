@@ -10,7 +10,7 @@ exports[`<ArticleHeading /> should render <ArticleHeading /> 1`] = `
     <Link
       className="header-image__link"
       replace={false}
-      to="/blog/article-1"
+      to="/article-1"
     >
       <img
         alt="article"
@@ -28,7 +28,7 @@ exports[`<ArticleHeading /> should render <ArticleHeading /> 1`] = `
       <Link
         className="title__link"
         replace={false}
-        to="/blog/article-1"
+        to="/article-1"
       >
         article-1-title
       </Link>
@@ -54,7 +54,7 @@ exports[`<ArticleHeading /> should render <ArticleHeading /> 1`] = `
       <Link
         className="active"
         replace={false}
-        to="/blog/article-1"
+        to="/article-1"
       >
         <span>
           Read more »

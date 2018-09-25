@@ -1,13 +1,13 @@
 import { stub, assert } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as articleService from 'services/article-service';
-import * as articleSelector from 'containers/Article/article-selector';
+import * as articleNameSelector from 'common/article-name-selector';
 import { FETCH_ARTICLE_RESPONDED } from 'events/article-events';
 import { fetchArticleAction } from '../article-actions';
 
 describe('article-actions', () => {
   test('should fetch article', () => {
-    stub(articleSelector, 'selectArticleName').returns(() => 'test-article');
+    stub(articleNameSelector, 'selectArticleName').returns(() => 'test-article');
     stub(articleService, 'fetchArticle').returns(Promise.resolve('article'));
     const store = createStoreMock();
 
@@ -22,6 +22,6 @@ describe('article-actions', () => {
 
   afterEach(() => {
     articleService.fetchArticle.restore();
-    articleSelector.selectArticleName.restore();
+    articleNameSelector.selectArticleName.restore();
   });
 });

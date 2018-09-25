@@ -4,7 +4,7 @@ import moment from 'moment';
 import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
 import { USER_LOGGED_OUT, USER_LOGIN_REQUESTED } from 'events/login-events';
 import { LOGIN_PROVIDER_FACEBOOK, LOGIN_PROVIDER_GOOGLE } from 'constants/login-providers';
-import { selectArticle } from './add-comments-selector';
+import { selectArticle } from 'common/article-selector';
 
 export function addCommentAction(comment, commentForm) {
   return (dispatch, getState) => {

@@ -9,7 +9,7 @@ export default function ArticleNavigation({ article }) {
     <nav className="ArticleNavigation">
       <div className="nav__links">
         <div className="nav__next">
-          <Link to={`/blog/${article.slug.current}`} />
+          <Link to={`/${article.slug.current}`} />
         </div>
         <div className="nav__next" />
       </div>

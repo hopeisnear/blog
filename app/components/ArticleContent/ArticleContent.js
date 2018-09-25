@@ -29,7 +29,7 @@ const ArticleContent = ({ article }) => (
   <div className="ArticleContent">
     <article className="article-content__header">
       <h1 className="header__title">{article.title}</h1>
-      <Link className="header__link" to="/blog">
+      <Link className="header__link" to="/">
         <span className="back-arrow">&#171;</span> <span>View all articles</span>
       </Link>
     </article>

@@ -17,7 +17,7 @@ exports[`<TrendingArticles /> should render <TrendingArticles /> 1`] = `
         className="trending-articles__link"
         key="article-1"
         replace={false}
-        to="/blog/article-1"
+        to="/article-1"
       >
         <span
           className="trending-articles__image"
@@ -37,7 +37,7 @@ exports[`<TrendingArticles /> should render <TrendingArticles /> 1`] = `
         className="trending-articles__link"
         key="article-2"
         replace={false}
-        to="/blog/article-2"
+        to="/article-2"
       >
         <span
           className="trending-articles__image"

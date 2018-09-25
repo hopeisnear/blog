@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-
+import { selectArticleName } from 'common/article-name-selector';
+import { selectArticle } from 'common/article-selector';
 import { fetchArticleAction } from './article-actions';
-import { selectArticle, selectArticleName } from './article-selector';
 import Article from './Article';
 
 const mapDispatchToProps = dispatch => ({

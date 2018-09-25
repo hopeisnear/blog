@@ -8,8 +8,8 @@ import './Blog.scss';
 export default function Blog() {
   return (
     <Switch>
-      <Route exact path="/blog" component={Articles} />
-      <Route exact path="/blog/:articleName" component={Article} />
+      <Route exact path="/" component={Articles} />
+      <Route exact path="/:articleName" component={Article} />
     </Switch>
   );
 }

@@ -9,7 +9,7 @@ import './ArticleHeading.scss';
 const ArticleHeading = ({ article }) => (
   <article className="ArticleHeading">
     <div className="article__header">
-      <Link className="header-image__link" to={`/blog/${article.slug.current}`}>
+      <Link className="header-image__link" to={`/${article.slug.current}`}>
         <img
           className="header-image"
           src={imageUrlFor(article.image)
@@ -22,7 +22,7 @@ const ArticleHeading = ({ article }) => (
     </div>
     <div className="article__title">
       <h2 className="title__heading">
-        <Link className="title__link" to={`/blog/${article.slug.current}`}>
+        <Link className="title__link" to={`/${article.slug.current}`}>
           {article.title}
         </Link>
       </h2>
@@ -34,7 +34,7 @@ const ArticleHeading = ({ article }) => (
     <article className="article__body">
       <div>
         <p>{article.teaser}</p>
-        <Link className="active" to={`/blog/${article.slug.current}`}>
+        <Link className="active" to={`/${article.slug.current}`}>
           <span>Read more &#xbb;</span>
         </Link>
       </div>

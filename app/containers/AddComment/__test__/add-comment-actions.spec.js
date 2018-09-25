@@ -2,14 +2,14 @@ import { stub } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as commentsService from 'services/comments-service';
 import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
-import * as addCommentsSelector from '../add-comments-selector';
+import * as articleSelector from 'common/article-selector';
 import { addCommentAction } from '../add-comment-actions';
 
 jest.mock('moment', () => ({ utc: () => ({ format: () => '2018–01–30T12:34:56+00:00' }) }));
 
 describe('add-comment-actions', () => {
   test('should add new comment', () => {
-    stub(addCommentsSelector, 'selectArticle').returns(() => ({ _id: '1' }));
+    stub(articleSelector, 'selectArticle').returns(() => ({ _id: '1' }));
     stub(commentsService, 'addNewComment')
       .withArgs('1', { content: 'Test comment', createdAt: '2018–01–30T12:34:56+00:00' })
       .returns(Promise.resolve('added comment response'));
@@ -24,7 +24,7 @@ describe('add-comment-actions', () => {
   });
 
   test('should append new comment', () => {
-    stub(addCommentsSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [] }));
+    stub(articleSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [] }));
     stub(commentsService, 'appendComment')
       .withArgs('1', { content: 'Test comment', createdAt: '2018–01–30T12:34:56+00:00' })
       .returns(Promise.resolve('appended comment response'));
@@ -39,7 +39,7 @@ describe('add-comment-actions', () => {
   });
 
   test('should add new reply', () => {
-    stub(addCommentsSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [{ _key: '1', replies: [{ _key: '2' }] }, { _key: '3' }] }));
+    stub(articleSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [{ _key: '1', replies: [{ _key: '2' }] }, { _key: '3' }] }));
     stub(commentsService, 'addNewReply')
       .withArgs('1', '3', { content: 'Test comment', createdAt: '2018–01–30T12:34:56+00:00' })
       .returns(Promise.resolve('appended comment response'));
@@ -54,7 +54,7 @@ describe('add-comment-actions', () => {
   });
 
   test('should append new reply', () => {
-    stub(addCommentsSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [{ _key: '1', replies: [{ _key: '2', replies: [{ _key: '4' }] }] }, { _key: '3' }] }));
+    stub(articleSelector, 'selectArticle').returns(() => ({ _id: '1', comments: [{ _key: '1', replies: [{ _key: '2', replies: [{ _key: '4' }] }] }, { _key: '3' }] }));
     stub(commentsService, 'appendReply')
       .withArgs('1', '2', { content: 'Test comment', createdAt: '2018–01–30T12:34:56+00:00' })
       .returns(Promise.resolve('appended comment response'));
@@ -69,7 +69,7 @@ describe('add-comment-actions', () => {
   });
 
   afterEach(() => {
-    addCommentsSelector.selectArticle.restore();
+    articleSelector.selectArticle.restore();
     commentsService.addNewComment.restore && commentsService.addNewComment.restore();
     commentsService.appendComment.restore && commentsService.appendComment.restore();
     commentsService.addNewReply.restore && commentsService.addNewReply.restore();
