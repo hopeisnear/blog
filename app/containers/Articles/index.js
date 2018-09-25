@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { fetchArticlesAction } from './articles-actions';
+import { fetchArticlesAction, registerGetInTouchClick } from './articles-actions';
 import { selectArticles } from './articles-selector';
 import Articles from './Articles';
 
 const mapDispatchToProps = dispatch => ({
-  fetchArticles: () => dispatch(fetchArticlesAction())
+  fetchArticles: () => dispatch(fetchArticlesAction()),
+  registerGetInTouchClick: website => dispatch(registerGetInTouchClick(website))
 });
 
 const mapStateToProps = createStructuredSelector({

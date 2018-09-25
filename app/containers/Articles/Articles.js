@@ -13,7 +13,7 @@ export default class Articles extends PureComponent {
   }
 
   render() {
-    const { articles } = this.props;
+    const { articles, registerGetInTouchClick } = this.props;
 
     return (
       <section className="articles">
@@ -28,7 +28,7 @@ export default class Articles extends PureComponent {
           <div className="articles__sidebar">
             <div>
               <AboutAuthor />
-              <GetInTouch />
+              <GetInTouch onGetInTouchClick={registerGetInTouchClick} />
               <TrendingArticles />
             </div>
           </div>
@@ -40,5 +40,6 @@ export default class Articles extends PureComponent {
 
 Articles.propTypes = {
   articles: arrayOf(shape({})).isRequired,
-  fetchArticles: func.isRequired
+  fetchArticles: func.isRequired,
+  registerGetInTouchClick: func.isRequired
 };

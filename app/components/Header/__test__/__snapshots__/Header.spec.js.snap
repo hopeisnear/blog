@@ -15,7 +15,7 @@ exports[`<Header /> should render <Header /> 1`] = `
         to="/"
       >
         <div>
-          &lt; GOOD developer &gt;
+          &lt; GOOD dev &gt; - blog about programming best practices
         </div>
       </Link>
     </div>

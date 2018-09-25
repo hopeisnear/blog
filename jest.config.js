@@ -1,11 +1,6 @@
 module.exports = {
   testEnvironment: 'node',
-  collectCoverageFrom: [
-    'app/**/*.{js,jsx}',
-    '!app/**/*.test.js',
-    '!app/app.js',
-    '!app/*/*/Loadable.js'
-  ],
+  collectCoverageFrom: ['app/**/*.{js,jsx}', '!app/**/*.test.js', '!app/app.js', '!app/*/*/Loadable.js'],
   coverageThreshold: {
     global: {
       statements: 50,
@@ -27,8 +22,5 @@ module.exports = {
   testMatch: ['**/__test__/**/*.spec.js'],
   roots: ['<rootDir>/app'],
   setupFiles: ['<rootDir>/jest/test-setup.js'],
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-    '/__tests__/'
-  ]
+  coveragePathIgnorePatterns: ['/node_modules/', '/__tests__/']
 };

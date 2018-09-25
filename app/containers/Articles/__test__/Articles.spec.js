@@ -27,7 +27,8 @@ describe('<Articles />', () => {
           }
         }
       ],
-      fetchArticles: spy()
+      fetchArticles: spy(),
+      registerGetInTouchClick: () => {}
     };
   }
 });

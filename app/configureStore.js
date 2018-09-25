@@ -1,19 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import createReducer, { LOCATION_CHANGED } from './reducers';
-
-// eslint-disable-next-line no-unused-vars
-const trackingMiddleware = store => next => action => {
-  if (action.type === LOCATION_CHANGED) {
-    ga('send', 'pageview', action.location.pathname);
-  } else {
-    ga('send', 'event', 'Action', action.type);
-  }
-  return next(action);
-};
+import createReducer from './reducers';
+import analyticsMiddleware from './analytics-middleware';
 
 export default function configureStore(initialState) {
-  const enhancers = [applyMiddleware(thunk, trackingMiddleware)];
+  const enhancers = [applyMiddleware(thunk), applyMiddleware(analyticsMiddleware)];
 
   const store = createStore(createReducer(), initialState, compose(...enhancers));
 

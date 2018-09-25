@@ -29,7 +29,9 @@ exports[`<Articles /> should render <Articles /> 1`] = `
     >
       <div>
         <AboutAuthor />
-        <GetInTouch />
+        <GetInTouch
+          onGetInTouchClick={[Function]}
+        />
         <LoadableComponent />
       </div>
     </div>
