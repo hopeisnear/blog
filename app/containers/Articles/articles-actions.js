@@ -1,5 +1,5 @@
 import { fetchArticles } from 'services/article-service';
-import { FETCH_ARTICLES_RESPONDED } from 'common/article-actions';
+import { FETCH_ARTICLES_RESPONDED } from 'events/article-events';
 import { GET_IN_TOUCH_CLICKED } from 'events/analytics-events';
 
 export function fetchArticlesAction() {

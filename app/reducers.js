@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 import { combineReducers } from 'redux-immutable';
-import { USER_LOGGED_IN, USER_LOGGED_OUT } from './common/login-actions';
-import { LOCATION_CHANGED } from './events/location-events';
+import { USER_LOGGED_IN, USER_LOGGED_OUT } from 'events/login-events';
+import { LOCATION_CHANGED } from 'events/location-events';
 
 function routeReducer(state = Map({ location: undefined }), action) {
   switch (action.type) {

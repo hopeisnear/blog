@@ -1,5 +1,5 @@
 import { fetchArticle } from 'services/article-service';
-import { FETCH_ARTICLE_RESPONDED } from 'common/article-actions';
+import { FETCH_ARTICLE_RESPONDED } from 'events/article-events';
 import { selectArticleName } from './article-selector';
 
 export function fetchArticleAction() {

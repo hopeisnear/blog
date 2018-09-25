@@ -1,5 +1,5 @@
-import { USER_LOGGED_IN } from './common/login-actions';
-import { LOGIN_PROVIDER_FACEBOOK } from './constants/login-providers';
+import { USER_LOGGED_IN } from 'events/login-events';
+import { LOGIN_PROVIDER_FACEBOOK } from 'constants/login-providers';
 
 export function initFacebook(store) {
   window.fbAsyncInit = function asyncInitSdk() {

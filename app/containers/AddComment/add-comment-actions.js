@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { appendComment, addNewComment, addNewReply, appendReply } from 'services/comments-service';
 import moment from 'moment';
-import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
-import { USER_LOGGED_OUT, USER_LOGIN_REQUESTED } from 'common/login-actions';
+import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
+import { USER_LOGGED_OUT, USER_LOGIN_REQUESTED } from 'events/login-events';
 import { LOGIN_PROVIDER_FACEBOOK, LOGIN_PROVIDER_GOOGLE } from 'constants/login-providers';
 import { selectArticle } from './add-comments-selector';
 

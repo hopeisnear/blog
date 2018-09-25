@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
-import { FETCH_ARTICLE_RESPONDED, FETCH_ARTICLES_RESPONDED, FETCH_TRENDING_ARTICLES_RESPONDED } from 'common/article-actions';
-import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
+import { FETCH_ARTICLE_RESPONDED, FETCH_ARTICLES_RESPONDED, FETCH_TRENDING_ARTICLES_RESPONDED } from 'events/article-events';
+import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
 import blogReducer from '../blog-reducer';
 
 describe('blog-reducer', () => {

@@ -1,7 +1,7 @@
 import { stub } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as commentsService from 'services/comments-service';
-import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
+import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
 import * as addCommentsSelector from '../add-comments-selector';
 import { addCommentAction } from '../add-comment-actions';
 

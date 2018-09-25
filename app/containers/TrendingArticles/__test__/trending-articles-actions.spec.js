@@ -1,7 +1,7 @@
 import { stub } from 'sinon';
 import { createStoreMock } from 'utils/mockStoreCreator';
 import * as articleService from 'services/article-service';
-import { FETCH_TRENDING_ARTICLES_RESPONDED } from 'common/article-actions';
+import { FETCH_TRENDING_ARTICLES_RESPONDED } from 'events/article-events';
 import { fetchTrendingArticlesAction } from '../trending-articles-actions';
 
 describe('trending-articles-actions', () => {

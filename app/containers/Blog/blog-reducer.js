@@ -1,8 +1,8 @@
 import { Map } from 'immutable';
 import { unionBy } from 'lodash';
 import { createReducer } from 'utils/create-reducer';
-import { FETCH_ARTICLE_RESPONDED, FETCH_ARTICLES_RESPONDED, FETCH_TRENDING_ARTICLES_RESPONDED } from 'common/article-actions';
-import { ADD_COMMENT_RESPONDED } from 'common/comment-actions';
+import { FETCH_ARTICLE_RESPONDED, FETCH_ARTICLES_RESPONDED, FETCH_TRENDING_ARTICLES_RESPONDED } from 'events/article-events';
+import { ADD_COMMENT_RESPONDED } from 'events/comment-events';
 
 const initialState = Map({
   articles: [],
