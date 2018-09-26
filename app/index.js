@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 import configureStore from './configureStore';
 import { initFacebook } from './facebook-provider';
 import { initGooglePlus } from './google-plus-provider';
+import { initAnalytics } from './analytics-provider';
 import { LOCATION_CHANGED } from './events/location-events';
 
 const history = createHistory();
@@ -49,3 +50,4 @@ render();
 // registerServiceWorker();
 initFacebook(store);
 initGooglePlus(store);
+initAnalytics();

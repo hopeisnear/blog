@@ -17,10 +17,9 @@ module.exports = function addDevMiddlewares(app, webpackConfig) {
   const compiler = webpack(webpackConfig);
   const middleware = createWebpackMiddleware(compiler, webpackConfig.output.publicPath);
 
-  app.use(express.static(path.join(__dirname, '../public')));
+  app.use(express.static(path.join(__dirname, '../../public')));
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-
 
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead
