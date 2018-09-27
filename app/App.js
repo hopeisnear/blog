@@ -11,15 +11,12 @@ const App = () => (
     <Helmet>
       <title>GOOD dev - blog about programming best practices</title>
       <meta name="description" content="Good dev blog contains set of example based information how to build better software." />
+      <link rel="alternate" href={`${window.location.origin}${window.location.pathname}${window.location.hash}`} hrefLang="en" />
+      <link rel="canonical" href={`${window.location.origin}${window.location.pathname}${window.location.hash}`} />
       <meta property="og:site_name" content="GOOD dev" />
       <meta property="og:title" content="Good developer, best practices blog" />
       <meta property="og:description" content="Good dev blog is where developers can find information how to build a better software." />
       <meta property="og:image" content="images/gooddev-logo.png" />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="500" />
-      <meta property="og:image:height" content="500" />
-      <link rel="alternate" href={`${window.location.origin}${window.location.pathname}${window.location.hash}`} hrefLang="en" />
-      <link rel="canonical" href={`${window.location.origin}${window.location.pathname}${window.location.hash}`} />
       <meta property="og:url" content={`${window.location.origin}${window.location.pathname}${window.location.hash}`} />
       <meta property="fb:app_id" content={FACEBOOK_APP_ID} />
       <meta name="google-analytics" content={ANALYTICS_APP_ID} />

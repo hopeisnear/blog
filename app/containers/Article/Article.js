@@ -23,10 +23,9 @@ export default class Article extends PureComponent {
       <div className="Article">
         <Helmet>
           <title>{article.title}</title>
-          <meta name="description" content={article.teaser} />
-          <meta property="og:site_name" content="GOOD dev" />
+          <meta name="description" content={article.teaser.replace(/\n/g, ' ')} />
           <meta property="og:title" content={article.title} />
-          <meta property="og:description" content={article.teaser} />
+          <meta property="og:description" content={article.teaser.replace(/\n/g, ' ')} />
           <meta
             property="og:image"
             content={imageUrlFor(article.image)
@@ -35,9 +34,6 @@ export default class Article extends PureComponent {
               .height(252)
               .toString()}
           />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="360" />
-          <meta property="og:image:height" content="252" />
         </Helmet>
         <div className="article__content">{<ArticleContent article={article} />}</div>
         <ShareArticle />

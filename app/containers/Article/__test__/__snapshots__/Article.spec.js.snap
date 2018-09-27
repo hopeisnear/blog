@@ -16,10 +16,6 @@ exports[`<Article /> should render <Article /> 1`] = `
       name="description"
     />
     <meta
-      content="GOOD dev"
-      property="og:site_name"
-    />
-    <meta
       content="article title"
       property="og:title"
     />
@@ -30,18 +26,6 @@ exports[`<Article /> should render <Article /> 1`] = `
     <meta
       content={null}
       property="og:image"
-    />
-    <meta
-      content="image/png"
-      property="og:image:type"
-    />
-    <meta
-      content="360"
-      property="og:image:width"
-    />
-    <meta
-      content="252"
-      property="og:image:height"
     />
   </HelmetWrapper>
   <div
