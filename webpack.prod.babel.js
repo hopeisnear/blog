@@ -116,7 +116,7 @@ module.exports = {
       navigateFallback: '/index.html',
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
     }),
-    new CopyWebpackPlugin([{ from: 'app/pwa' }])
+    new CopyWebpackPlugin([{ from: 'app/pwa' }, { from: 'app/images' }])
   ],
   resolve: {
     modules: ['app', 'node_modules'],

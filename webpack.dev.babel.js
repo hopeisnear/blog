@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -83,7 +84,8 @@ module.exports = {
     new CircularDependencyPlugin({
       exclude: /a\.js|node_modules/, // exclude node_modules
       failOnError: false // show a warning when there is a circular dependency
-    })
+    }),
+    new CopyWebpackPlugin([{ from: 'app/pwa' }, { from: 'app/images' }])
   ],
   resolve: {
     modules: ['app', 'node_modules'],

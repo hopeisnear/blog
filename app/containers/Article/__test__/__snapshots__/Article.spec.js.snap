@@ -8,12 +8,47 @@ exports[`<Article /> should render <Article /> 1`] = `
     defer={true}
     encodeSpecialCharacters={true}
   >
-    <title>
-      Article details
-    </title>
+    <title />
     <meta
-      content="Article Test article content"
       name="description"
+    />
+    <meta
+      content="GOOD dev"
+      property="og:site_name"
+    />
+    <meta
+      property="og:title"
+    />
+    <meta
+      property="og:description"
+    />
+    <meta
+      content={
+        ImageUrlBuilder {
+          "options": Object {
+            "baseUrl": "https://cdn.sanity.io",
+            "dataset": "production",
+            "height": 252,
+            "ignoreImageParams": true,
+            "projectId": "klyyehyz",
+            "source": undefined,
+            "width": 360,
+          },
+        }
+      }
+      property="og:image"
+    />
+    <meta
+      content="image/png"
+      property="og:image:type"
+    />
+    <meta
+      content="360"
+      property="og:image:width"
+    />
+    <meta
+      content="252"
+      property="og:image:height"
     />
   </HelmetWrapper>
   <div
