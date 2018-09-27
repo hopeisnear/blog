@@ -22,7 +22,10 @@ describe('<Article />', () => {
       articleName: 'Test article',
       article: {
         comments: [],
-        commentsCount: 2
+        commentsCount: 2,
+        title: 'article title',
+        teaser: 'article teaser',
+        image: ''
       },
       fetchArticle: spy()
     };

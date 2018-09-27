@@ -32,7 +32,8 @@ export default class Article extends PureComponent {
             content={imageUrlFor(article.image)
               .ignoreImageParams()
               .width(360)
-              .height(252)}
+              .height(252)
+              .toString()}
           />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="360" />

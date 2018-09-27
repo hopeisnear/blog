@@ -16,6 +16,9 @@ const fetchArticleQuery = slug => `*[_type == "article" && slug.current=="${slug
   slug,
   content,
   comments,
+  title,
+  teaser,
+  image,
   _id
 }
 `;

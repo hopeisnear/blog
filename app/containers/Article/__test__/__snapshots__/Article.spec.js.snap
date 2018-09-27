@@ -8,8 +8,11 @@ exports[`<Article /> should render <Article /> 1`] = `
     defer={true}
     encodeSpecialCharacters={true}
   >
-    <title />
+    <title>
+      article title
+    </title>
     <meta
+      content="article teaser"
       name="description"
     />
     <meta
@@ -17,25 +20,15 @@ exports[`<Article /> should render <Article /> 1`] = `
       property="og:site_name"
     />
     <meta
+      content="article title"
       property="og:title"
     />
     <meta
+      content="article teaser"
       property="og:description"
     />
     <meta
-      content={
-        ImageUrlBuilder {
-          "options": Object {
-            "baseUrl": "https://cdn.sanity.io",
-            "dataset": "production",
-            "height": 252,
-            "ignoreImageParams": true,
-            "projectId": "klyyehyz",
-            "source": undefined,
-            "width": 360,
-          },
-        }
-      }
+      content={null}
       property="og:image"
     />
     <meta
@@ -59,6 +52,9 @@ exports[`<Article /> should render <Article /> 1`] = `
         Object {
           "comments": Array [],
           "commentsCount": 2,
+          "image": "",
+          "teaser": "article teaser",
+          "title": "article title",
         }
       }
     />
