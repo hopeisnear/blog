@@ -20,8 +20,6 @@ const App = () => (
       <meta property="og:url" content={`${window.location.origin}${window.location.pathname}${window.location.hash}`} />
       <meta property="fb:app_id" content={FACEBOOK_APP_ID} />
       <meta name="google-analytics" content={ANALYTICS_APP_ID} />
-      <meta name="hostname" content={window.location.hostname} />
-      <meta name="expected-hostname" content={window.location.hostname} />
       <script async src="https://www.google-analytics.com/analytics.js" />
     </Helmet>
     <Header />
