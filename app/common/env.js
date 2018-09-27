@@ -6,5 +6,6 @@ export const SANITY_CONFIG = {
 };
 
 export const ANALYTICS_APP_ID = 'UA-126291608-1';
-
 export const FACEBOOK_APP_ID = '2085805548104423';
+export const GOOGLE_PLUS_CLIENT_ID = '808040556320-12b791grhcf1eufo5vkk831osv32q8se.apps.googleusercontent.com';
+export const GOOGLE_PLUS_API_KEY = 'AIzaSyB2Nh_wj8V8Fu_FUl4-qspMZlMG1_J5IWc';

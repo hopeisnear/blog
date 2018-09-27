@@ -1,4 +1,5 @@
 import { USER_LOGGED_IN } from 'events/login-events';
+import { GOOGLE_PLUS_API_KEY, GOOGLE_PLUS_CLIENT_ID } from 'common/env';
 import { LOGIN_PROVIDER_GOOGLE } from 'constants/login-providers';
 
 export function initGooglePlus(store) {
@@ -24,8 +25,6 @@ export function initGooglePlus(store) {
   }
 
   function updateSigninStatus(isSignedIn) {
-    // When signin status changes, this function is called.
-    // If the signin status is changed to signedIn, we make an API call.
     if (isSignedIn) {
       makeApiCall();
     }
@@ -34,9 +33,9 @@ export function initGooglePlus(store) {
   function start() {
     gapi.client
       .init({
-        apiKey: 'AIzaSyB2Nh_wj8V8Fu_FUl4-qspMZlMG1_J5IWc',
+        apiKey: GOOGLE_PLUS_API_KEY,
         discoveryDocs: ['https://people.googleapis.com/$discovery/rest?version=v1'],
-        clientId: '808040556320-12b791grhcf1eufo5vkk831osv32q8se.apps.googleusercontent.com',
+        clientId: GOOGLE_PLUS_CLIENT_ID,
         scope: 'profile'
       })
       .then(() => {

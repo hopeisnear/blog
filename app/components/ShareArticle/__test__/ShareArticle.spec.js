@@ -4,7 +4,7 @@ import ShareArticle from '../ShareArticle';
 
 describe('<ShareArticle />', () => {
   test('should render <ShareArticle />', () => {
-    global.window = { location: { href: 'www.test.com' } };
+    global.window = { location: { origin: 'www.test.com', pathname: '/blog', hash: '' } };
 
     const ahareArticleComponent = shallow(<ShareArticle />);
 

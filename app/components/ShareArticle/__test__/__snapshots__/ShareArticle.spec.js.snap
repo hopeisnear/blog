@@ -17,7 +17,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       title="Share on Facebook"
     >
       <CreatedButton
-        url="www.test.com"
+        url="www.test.com/blog"
         windowHeight={400}
         windowWidth={550}
       >
@@ -34,7 +34,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       title="Share on Google+"
     >
       <CreatedButton
-        url="www.test.com"
+        url="www.test.com/blog"
         windowHeight={400}
         windowWidth={550}
       >
@@ -51,7 +51,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       title="Share on LinkedIn"
     >
       <CreatedButton
-        url="www.test.com"
+        url="www.test.com/blog"
         windowHeight={600}
         windowWidth={750}
       >
@@ -68,7 +68,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       title="Share on Twitter"
     >
       <CreatedButton
-        url="www.test.com"
+        url="www.test.com/blog"
         windowHeight={400}
         windowWidth={550}
       >
@@ -85,7 +85,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       title="Share on Reddit"
     >
       <CreatedButton
-        url="www.test.com"
+        url="www.test.com/blog"
         windowHeight={460}
         windowWidth={660}
       >
@@ -104,7 +104,7 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
       <CreatedButton
         onClick={[Function]}
         openWindow={false}
-        url="www.test.com"
+        url="www.test.com/blog"
       >
         <Icon
           className=""

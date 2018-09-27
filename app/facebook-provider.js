@@ -1,10 +1,11 @@
 import { USER_LOGGED_IN } from 'events/login-events';
+import { FACEBOOK_APP_ID } from 'common/env';
 import { LOGIN_PROVIDER_FACEBOOK } from 'constants/login-providers';
 
 export function initFacebook(store) {
   window.fbAsyncInit = function asyncInitSdk() {
     FB.init({
-      appId: '2085805548104423',
+      appId: FACEBOOK_APP_ID,
       cookie: true,
       xfbml: true,
       status: true,
@@ -33,7 +34,7 @@ export function initFacebook(store) {
     }
     const js = d.createElement(s);
     js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js';
+    js.src = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=${FACEBOOK_APP_ID}`;
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'facebook-jssdk');
 }

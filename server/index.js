@@ -1,6 +1,6 @@
 /* eslint consistent-return:0 */
 
-const http = require('http');
+// const http = require('http');
 const express = require('express');
 const { resolve } = require('path');
 const spdy = require('spdy');
@@ -31,17 +31,15 @@ const options = {
   cert: fs.readFileSync(`${__dirname}/server.crt`)
 };
 
-spdy
-  .createServer(options, app)
-  .listen(port, (error) => {
-    if (error) {
-      console.error(error);
-      return process.exit(1);
-    }
-    logger.appStarted(port, prettyHost);
-  });
+spdy.createServer(options, app).listen(port, error => {
+  if (error) {
+    console.error(error);
+    return process.exit(1);
+  }
+  logger.appStarted(port, prettyHost);
+});
 
-http.createServer((req, res) => {
-  res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
-  res.end();
-}).listen(80);
+// http.createServer((req, res) => {
+//   res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
+//   res.end();
+// }).listen(80);

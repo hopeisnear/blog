@@ -17,7 +17,7 @@ import {
 import './ShareArticle.scss';
 
 export default function ShareArticle() {
-  const articleUrl = window.location.href;
+  const articleUrl = `${window.location.origin}${window.location.pathname}${window.location.hash}`;
 
   return (
     <div className="ShareArticle">
