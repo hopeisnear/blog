@@ -29,6 +29,24 @@ exports[`<ShareArticle /> should render <ShareArticle /> 1`] = `
         />
       </CreatedButton>
     </li>
+    <li>
+      <div
+        className="fb-share-button"
+        data-href="https://ec2-18-184-79-160.eu-central-1.compute.amazonaws.com:3000/how-to-approach-machine-learning-problems"
+        data-layout="button"
+        data-mobile-iframe="true"
+        data-size="small"
+      >
+        <a
+          className="fb-xfbml-parse-ignore"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fec2-18-184-79-160.eu-central-1.compute.amazonaws.com%3A3000%2Fhow-to-approach-machine-learning-problems&src=sdkpreparse"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Share
+        </a>
+      </div>
+    </li>
     <li
       className="share-article__item"
       title="Share on Google+"

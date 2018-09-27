@@ -28,6 +28,24 @@ export default function ShareArticle() {
             <FacebookIcon size={40} />
           </FacebookShareButton>
         </li>
+        <li>
+          <div
+            className="fb-share-button"
+            data-href="https://ec2-18-184-79-160.eu-central-1.compute.amazonaws.com:3000/how-to-approach-machine-learning-problems"
+            data-layout="button"
+            data-size="small"
+            data-mobile-iframe="true"
+          >
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fec2-18-184-79-160.eu-central-1.compute.amazonaws.com%3A3000%2Fhow-to-approach-machine-learning-problems&amp;src=sdkpreparse"
+              className="fb-xfbml-parse-ignore"
+            >
+              Share
+            </a>
+          </div>
+        </li>
         <li className="share-article__item" title="Share on Google+">
           <GooglePlusShareButton url={articleUrl}>
             <GooglePlusIcon size={40} />
